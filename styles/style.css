@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+
+body{
+    background-color: #C8E8E0;
+}
+
+.service{
+    width: 100%;
+}
+
+
+.service .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.service .container .item{
+    background-color: white;
+    width: 310px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 30px;
+    border-top: 10px solid black;
+}
+
+.service .container .item .image{
+    width: 300px;
+}
+
+.service .container .item .image img{
+    width: 100%;
+}
+
+.service .container .item .heading{
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #2E937A;
+    text-align: center;
+}
+
+.service .container .item .paragraph{
+    text-align: center;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.service .container .item .link{
+    color: black;
+    text-transform: uppercase;
+    font-family: "Source Sans 3", sans-serif;
+    background-color: #2E937A;
+    width: fit-content;
+    padding: 5px 40px;
+    border-radius: 20px;
+}
+
+.service .container .item .link a{
+    color: white;
+}
+
+
+a{
+    color: black;
+}

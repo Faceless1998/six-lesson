@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+section{
+    width: 100%;
+}
+
+body{
+    background-color: #f2f2f2;
+}
+
+.team{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 100px;
+}
+
+.item{
+    width: 300px;
+    height: 500px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item .image{
+   width: 200px;
+   height: 200px;
+   background-color: #ffffff;
+   border-radius: 50%;
+   margin-top: -80px;
+   border: 10px solid blue;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.item .image img{
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+    object-position: right;
+    border-radius: 50%;
+}
