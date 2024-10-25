@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+
+.product{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.image{
+    width: 100%;
+}
+
+.image img{
+    width: 100%;
+}
+
+.offer{
+    font-style: normal;
+    text-transform: uppercase;
+    background-color: #F79009;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    color: white;
+    font-weight: 500;
+    border-radius: 20px;
+}
+
+
+.price{
+    display: flex;
+    gap: 10px;
+}
+
+.price .current{
+    color: #EC5E2A;
+    font-weight: 700;
+}
+
+.price .original{
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+    text-decoration-color: #EC5E2A;
+}
+
+.price >div::after,  .ganv span::after{
+    content: " ₾ ";
+}
+
+.ganv{
+    font-size: 12px;
+}
+
+.ganv span{
+    font-size: 10px;
+    color: #EC5E2A;
+}
+
+.adding>div{
+    height: 40px;
+}
+
+.adding{
+    display: flex;
+    gap: 10px;
+}
+
+.adding .diff{
+    width: 40px;
+    background-color: #f2f2f2;
+    color: #797979;
+    border-radius: 5px;
+    position: relative;
+}
+
+.adding .diff i{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.adding .cart{
+    background-color: #EC5E2A;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    border-radius: 5px;
+}
+
+.adding .cart i{
+    margin-right: 5px;
+}
+
+.title{
+    font-weight: 700;
+    font-size: 19px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.product:hover{
+    transform: translateY(-20px);
+}
+
+.triangle{
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 200px solid #f00;
+}
+
+.triangle2{
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 200px solid #f00;
+}
+
+.two{
+    width: fit-content;
+    height: fit-content;
+    font-size: 100px;
+    transform: rotate(90deg);
+}
