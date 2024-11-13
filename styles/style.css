@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --textcolor: #111;
+  --maintextcolor: #efffff;
+  --mainfont: "Raleway";
+  --secondfont: "Playfair Display";
+  --hovercolor: #e6e6e6;
+  --bgcolor: #040307;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+section {
+  width: 100%;
+}
+
+section.heading {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 720px;
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.35)
+    ),
+    url(./../assets/Untitled1min.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+section.heading .text {
+  font-size: 70px;
+  color: white;
+  width: 700px;
+  text-align: center;
+  font-family: var(--secondfont);
+  font-weight: 700;
+}
+
+section.heading .par {
+  font-family: var(--mainfont);
+  color: white;
+  width: 700px;
+  padding: 0 40px;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+
+section.heading a .button {
+  width: fit-content;
+  height: fit-content;
+  background-color: white;
+  font-family: var(--mainfont);
+  text-transform: lowercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 15px 40px;
+  border-radius: 30px;
+  color: var(--textcolor);
+}
+
+section.heading a .button:hover {
+  background-color: var(--hovercolor);
+}
+
+@media only screen and (max-width: 900px) {
+  section.heading .text {
+    font-size: 50px;
+    text-wrap: wrap;
+    width: 300px;
+  }
+
+  section.heading .par {
+    width: 300px;
+    line-height: 1.5;
+  }
+}
+
+section.explore {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bgcolor);
+  align-items: center;
+}
+
+section.explore .heading {
+  text-align: center;
+  color: white;
+  font-size: 48px;
+  font-family: var(--secondfont);
+  font-weight: 700;
+}
+
+section.explore .text {
+  color: white;
+  font-family: var(--mainfont);
+  margin: 20px 0 50px;
+  font-size: 16px;
+  width: 700px;
+  text-align: center;
+}
+
+section.explore .cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+section.explore .cards .card {
+  width: 360px;
+  height: 560px;
+  color: white;
+  display: flex;
+  align-items: end;
+  padding: 0 20px 39px;
+  font-size: 30px;
+  font: 400;
+  font-family: var(--secondfont);
+  line-height: 1.2;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+section.explore .cards .card:nth-child(1) {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url(./../assets/123.jpg);
+}
+
+section.explore .cards .card:nth-child(2) {
+  background-image:linear-gradient(0deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url(./../assets/3f8d3833-72b3-3072-3d51-57dad152da82.jpg);
+}
+
+section.explore .cards .card:nth-child(3) {
+  background-image:linear-gradient(0deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url(./../assets/4a1d4947-fd02-e665-4d57-deac20b3eb39.jpg);
+}
