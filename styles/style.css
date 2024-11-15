@@ -16,6 +16,9 @@
   box-sizing: border-box;
 }
 
+body{
+  background-color: black;
+}
 section {
   width: 100%;
 }
@@ -73,19 +76,6 @@ section.heading a .button:hover {
   background-color: var(--hovercolor);
 }
 
-@media only screen and (max-width: 900px) {
-  section.heading .text {
-    font-size: 50px;
-    text-wrap: wrap;
-    width: 300px;
-  }
-
-  section.heading .par {
-    width: 300px;
-    line-height: 1.5;
-  }
-}
-
 section.explore {
   display: flex;
   flex-direction: column;
@@ -136,13 +126,100 @@ section.explore .cards .card {
 }
 
 section.explore .cards .card:nth-child(1) {
-  background-image: linear-gradient(0deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url(./../assets/123.jpg);
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.35)
+    ),
+    url(./../assets/123.jpg);
 }
 
 section.explore .cards .card:nth-child(2) {
-  background-image:linear-gradient(0deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url(./../assets/3f8d3833-72b3-3072-3d51-57dad152da82.jpg);
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.35)
+    ),
+    url(./../assets/3f8d3833-72b3-3072-3d51-57dad152da82.jpg);
 }
 
 section.explore .cards .card:nth-child(3) {
-  background-image:linear-gradient(0deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url(./../assets/4a1d4947-fd02-e665-4d57-deac20b3eb39.jpg);
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.35)
+    ),
+    url(./../assets/4a1d4947-fd02-e665-4d57-deac20b3eb39.jpg);
+}
+
+section.wildlife {
+  margin-top: 50px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-image: url(./../assets/min.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section.wildlife .heading{
+  font-size: 60px;
+  width: 800px;
+  text-align: center;
+  color: white;
+  text-wrap: wrap;
+  font-family: var(--secondfont);
+}
+
+section.wildlife .text{
+  width: 800px;
+  font-family: var(--mainfont);
+  color: white;
+  margin: 20px 0 80px;
+}
+
+section.wildlife .text a{
+  border-bottom: 1px dashed red;
+  color: white;
+}
+
+section.wildlife .text a:hover{
+  color: #e6e6e6;
+}
+
+section.top{
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #111;
+  color: white;
+  align-items: center;
+  gap: 50px;
+}
+
+section.top .heading{
+  font-size: 45px;
+  text-align: center;
+  width: 800px;
+  font-family: var(--secondfont);
+}
+
+section.top .text{
+  width: 800px;
+  text-align: center;
+  font-family: var(--mainfont);
+  font-size: 14px;
+}
+
+section.horse{
+  width: 100%;
+  height: 400px;
+  background-image: url(./../assets/s.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
