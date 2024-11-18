@@ -6,19 +6,3 @@
     --secondfont:"Roboto", sans-serif;
     --maincolor:#FFDC12;
 }
-
-*{
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    box-sizing: border-box;
-    color: white;
-}
-
-body{
-    background-color: var(--bgcolor);
-}
-
-section{
-    width: 100%;
-}
