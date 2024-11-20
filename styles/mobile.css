@@ -27,3 +27,27 @@
         font-size: 1.5rem!important;
     }
 }
+
+
+@media only screen and (max-width:1020px) {
+
+    section.team .container .cards{
+        width: 100%;
+    }
+    section.team .container .cards{
+        /* flex-direction: column; */
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    section.team .container .cards .card{
+        flex-direction: column;
+        height: fit-content;
+        width: fit-content;
+        padding: 40px 10px;
+    }
+
+    section.team .container .text{
+        width: 100%;
+    }
+}

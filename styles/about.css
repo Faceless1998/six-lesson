@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*{
+    font-family: "Montserrat", sans-serif;
+    color: black;
+}
+body{
+    background-color: white;
+}
+
+section.header{
+    background: linear-gradient(180deg, #F1C50E, #CA4AB1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 100px 0;
+}
+
+section.header .title{
+    font-size: 62px;
+    width: 60%;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    animation: gadideba 1.5s ease-in-out;
+}
+
+section.header .contact-form{
+    display: flex;
+    height: 62px;
+    display: flex;
+    align-items: center;
+}
+
+section.header .contact-form .input-text{
+    width: 400px;
+    background-color: white;
+    padding: 20px 0;
+    height: 62px;
+
+
+}
+section.header .contact-form .button{
+    background-color: #F1C50E;
+    text-transform: uppercase;
+    height: 62px;
+    font-weight: 500;
+    height: 100%;
+    display: flex;
+}
+
+section.header .contact-form .button:hover{
+    background-color: #C947B4;
+}
+
+section.header .contact-form .button a{
+    height: 100%;
+    width: 100%;
+    padding: 20px 30px;
+}
+
+
+section.header .contact-form .input-text input[type="text"]{
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    border: none;
+    font-size: 20px;
+    outline: none;
+    color: #808080;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+
+@keyframes gadideba{
+    from{ transform: scale(0);}
+    to{transform: scale(1);}
+}
+
+
+/*  Meet The Team  */
+
+section.team{
+    display: flex;
+    justify-content: center;
+}
+
+section.team .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+section.team .container .title{
+    font-size: 50px;
+    font-weight: 700;
+
+}
+
+section.team .container .text{
+    width: 800px;
+    text-align: center;
+    font-size: 18px;
+}
+
+section.team .container .cards{
+    width: 1000px;
+    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section.team .container .cards .card{
+    width: calc(50% - 10px);
+    height: 246px;
+    background-color: #F1C50E;
+    border-radius: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+section.team .container .cards .card .info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+section.team .container .cards .card .info .position{
+    font-size: 16px;
+    font-weight: 400;
+}
+section.team .container .cards .card .info .name{
+    font-size: 20px;
+    font-weight: 700;
+}
+section.team .container .cards .card .info .desc{
+    font-size: 16px;
+    font-weight: 300;
+    width: 250px;
+}
+
+section.team .container .cards .card .info .icons i{
+    color: #C947B4;
+    margin-right: 30px;
+    font-size: 30px;
+}
+
+
+section.team .container .cards .card .image:nth-child(1){
+    background-image: url(./../assets/b5f9e7f9-f0cf-42fb-96c9-3156bc7d64a2.jpg);
+    width: 186px;
+    height: 186px;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
