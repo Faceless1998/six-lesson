@@ -119,17 +119,49 @@
             mask-image: radial-gradient(circle, black 30%, rgba(0, 0, 0, 0) 50%);
         }
 
-        .magazine{
+        .magazine {
             column-count: 3;
             text-align: justify;
             column-gap: 40px;
             /* column-rule-style: solid;
             column-rule-width: 10px;
             column-rule-color: red;  */
-            column-rule: 10px solid red;   
-            column-span:all;
-            column-width: 150px;    
-                
+            column-rule: 10px solid red;
+            column-span: all;
+            column-width: 150px;
+
+        }
+
+        body {
+            counter-reset: section;
+        }
+
+        .title {
+            counter-reset: subsection;
+        }
+
+        .subtitle {
+            counter-reset: extrasubsection;
+
+        }
+
+        .title::before {
+            counter-increment: section;
+            content: "❀";
+            /* border-radius: 50%;
+            background-color: black;
+            color: white;
+            padding: 5px; */
+        }
+
+        .subtitle::before {
+            counter-increment: subsection;
+            content: counter(section)"." counter(subsection);
+        }
+
+        .extra::before {
+            counter-increment: extrasubsection;
+            content: counter(section)"." counter(subsection)"." counter(extrasubsection);
         }
     </style>
 </head>
@@ -150,7 +182,7 @@
         <img src="assets/images/apple-2675909_960_720.jpg" width="600" height="400">
     </div> -->
 
-    <div class="magazine">
+    <!-- <div class="magazine">
         Early historians such as Alexander Dalrymple and James Burney claim that Juan Fernández was the first European
         to reach New Zealand. In 1575 the governor of Cuyo, Juan Jufré, organized an expedition to Terra Australis under
         the command of Juan Fernandez. The expedition was authorized by the governor of Chile but not the Viceroy of
@@ -193,7 +225,98 @@
         concerned with theoretical reasons as to why such a continent must exist, and uses the supposed discoveries of
         Juan Fernández to bolster his theories.[5] Medina's own opinion on the subject is that it is more likely that
         the islands which Fernández landed on are those of Tahiti:
+    </div> -->
+
+    <div>
+        <div class="title">one</div>
+
+        <div class="subtitle">
+            <div class="extra">t1</div>
+            <div class="extra">t1</div>
+
+            <div class="extra">t1</div>
+
+            <div class="extra">t1</div>
+
+            <div class="extra">t1</div>
+
+        </div>
+        <div class="subtitle">
+            <div class="extra">t1</div>
+
+            <div class="extra">t1</div>
+
+            <div class="extra">t1</div>
+
+            <div class="extra">t1</div>
+
+            <div class="extra">t1</div>
+
+
+        </div>
+        <div class="subtitle">p1</div>
+        <div class="subtitle">p1</div>
+
     </div>
+
+    <div>
+        <div class="title">two</div>
+        <div class="subtitle">p1</div>
+        <div class="subtitle">p1</div>
+        <div class="subtitle">p1</div>
+        <div class="subtitle">p1</div>
+    </div>
+
+
+    <div>
+        <div class="title">three</div>
+        <div class="subtitle">p1</div>
+        <div class="subtitle">p1</div>
+        <div class="subtitle">p1</div>
+        <div class="subtitle">p1</div>
+    </div>
+
+    <div>
+        <div class="title">fout</div>
+        <div class="subtitle">p1</div>
+        <div class="subtitle">p1</div>
+        <div class="subtitle">p1</div>
+        <div class="subtitle">p1</div>
+    </div>
+
+
+    <ol style="margin-left: 150px;">
+        <li>
+
+            <ol>
+                <li>erti</li>
+                <li>ori</li>
+            </ol>
+
+
+        </li>
+        <li>
+
+            <ol>
+                <li>sami</li>
+                <li>otxi</li>
+            </ol>
+
+
+        </li>
+        <li>
+
+            <ol>
+                <li>sami</li>
+                <li>otxi</li>
+            </ol>
+
+
+        </li>
+    </ol>
+
+
+
 </body>
 
 </html>
