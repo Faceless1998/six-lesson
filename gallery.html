@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        .box {
+            margin: 10px;
+            outline: 2px solid black;
+            width: 100px;
+            height: 10px;
+
+            /* transition-duration: 2s;
+            transition-property: all;
+            transition-timing-function: ease-in-out;
+            transition-delay: 1s;
+            
+            transform: translate(80%,80%);
+            transform: translate3d();
+            transform: translateX(50%);
+            transform: translateY(50%); 
+            transform: translateZ(20%);
+            
+            transform: rotate(45deg);
+            transform: rotate3d(40deg, 20deg, 100deg);
+            transform: rotateX(60deg);
+            transform: rotateY(60deg);
+            transform: rotateZ(60deg);
+            
+            transform: scale(0.9);
+            transform: scale3d();
+            transform: scaleX(2.5);
+            transform: scaleY(2.5);
+            transform: scaleZ(2);
+            
+            transform: skew(40deg);
+            transform: skewX(30deg);
+            transform: skewY(40deg);
+
+            transform: matrix(scaleX, skewY, skewX, scaleY, translateX, translateY);
+            */
+        }
+
+        .loading {
+            width: 0px;
+            height: 10px;
+            background-color: red;
+            transition: width 2s ease-in-out;
+        }
+
+        .box:hover .loading {
+            width: 100%;
+        }
+
+
+
+
+        .tooltip {
+            margin-top: 100px;
+            margin-left: 100px;
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+
+        .tooltip .tooltip-text {
+            visibility: hidden;
+            width: 200px;
+            top: 150%;
+            left: -70%;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+            text-transform: capitalize;
+            border-radius: 20px;
+
+            position: absolute;
+            z-index: 999;
+        }
+
+        .tooltip .tooltip-text::after {
+            content: " ";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent black transparent;
+        }
+
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+        }
+
+
+        .mask {
+            /* max-width: 600px;
+            height: 300px;
+            overflow-y: scroll;
+            background: url(assets/images/apple-2675909_960_720.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+            color: white; */
+            width: 600px;
+            height: 400px;
+            -webkit-mask-image: radial-gradient(circle, black 30%, rgba(0, 0, 0, 0) 50%);
+            mask-image: radial-gradient(circle, black 30%, rgba(0, 0, 0, 0) 50%);
+        }
+
+        .magazine{
+            column-count: 3;
+            text-align: justify;
+            column-gap: 40px;
+            /* column-rule-style: solid;
+            column-rule-width: 10px;
+            column-rule-color: red;  */
+            column-rule: 10px solid red;   
+            column-span:all;
+            column-width: 150px;    
+                
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box">
+        <div class="loading">
+
+        </div>
+    </div> -->
+
+    <!-- <div class="tooltip">
+        this is sparta
+        <span class="tooltip-text">no, this is batumi!</span>
+    </div> -->
+
+    <!-- <div class="mask">
+        <img src="assets/images/apple-2675909_960_720.jpg" width="600" height="400">
+    </div> -->
+
+    <div class="magazine">
+        Early historians such as Alexander Dalrymple and James Burney claim that Juan Fernández was the first European
+        to reach New Zealand. In 1575 the governor of Cuyo, Juan Jufré, organized an expedition to Terra Australis under
+        the command of Juan Fernandez. The expedition was authorized by the governor of Chile but not the Viceroy of
+        Peru. As a result, Jufré changed the official itinerary and pretended his expedition would only sail to the
+        islands discovered by Fernández in 1574. In fact, the real destination of the expedition was still Terra
+        Australis. Soon Juan Fernandez set sail from Valparaíso. After heading west for one month along the 40th
+        parallel south, in the spring of 1576 they arrived in an island described as "mountainous, fertile, with
+        strong-flowing rivers, inhabited by white peoples, and with all the fruits necessary to live".[4]
+
+        Later, the expedition set sail for Chile and Juan Fernández wished to convey his discovery to government
+        officials. However, Juan Jufré refused. He requested that the discovery be kept a secret as the expedition had
+        not been authorized by the Viceroy of Peru. Later, after Jufré's death in 1578, Fernández finally shared the
+        discovery with the authorities and tried to convince them of the need to return to the islands and establish a
+        colony. The idea was scrapped due to lack of interest. A record exists in the Spanish Admiralty libraries which
+        describes this discovery. It was reviewed in the 19th century by the Chilean bibliographer José Toribio Medina
+        who is one of the main sources for the claim in South American literature. A transcription of the record in
+        question is included in an appendix Medina's book. It is a memorandum from one Dr. Arias to the King of Spain in
+        1621, which requested funds to convert the natives of the lands of Terra Australis. The document is primarily
+        concerned with theoretical reasons as to why such a continent must exist, and uses the supposed discoveries of
+        Juan Fernández to bolster his theories.[5] Medina's own opinion on the subject is that it is more likely that
+        the islands which Fernández landed on are those of Tahiti:
+        Early historians such as Alexander Dalrymple and James Burney claim that Juan Fernández was the first European
+        to reach New Zealand. In 1575 the governor of Cuyo, Juan Jufré, organized an expedition to Terra Australis under
+        the command of Juan Fernandez. The expedition was authorized by the governor of Chile but not the Viceroy of
+        Peru. As a result, Jufré changed the official itinerary and pretended his expedition would only sail to the
+        islands discovered by Fernández in 1574. In fact, the real destination of the expedition was still Terra
+        Australis. Soon Juan Fernandez set sail from Valparaíso. After heading west for one month along the 40th
+        parallel south, in the spring of 1576 they arrived in an island described as "mountainous, fertile, with
+        strong-flowing rivers, inhabited by white peoples, and with all the fruits necessary to live".[4]
+
+        Later, the expedition set sail for Chile and Juan Fernández wished to convey his discovery to government
+        officials. However, Juan Jufré refused. He requested that the discovery be kept a secret as the expedition had
+        not been authorized by the Viceroy of Peru. Later, after Jufré's death in 1578, Fernández finally shared the
+        discovery with the authorities and tried to convince them of the need to return to the islands and establish a
+        colony. The idea was scrapped due to lack of interest. A record exists in the Spanish Admiralty libraries which
+        describes this discovery. It was reviewed in the 19th century by the Chilean bibliographer José Toribio Medina
+        who is one of the main sources for the claim in South American literature. A transcription of the record in
+        question is included in an appendix Medina's book. It is a memorandum from one Dr. Arias to the King of Spain in
+        1621, which requested funds to convert the natives of the lands of Terra Australis. The document is primarily
+        concerned with theoretical reasons as to why such a continent must exist, and uses the supposed discoveries of
+        Juan Fernández to bolster his theories.[5] Medina's own opinion on the subject is that it is more likely that
+        the islands which Fernández landed on are those of Tahiti:
+    </div>
+</body>
+
+</html>
