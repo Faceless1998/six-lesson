@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f1f1f1;
+        }
+
+
+        .georgian-flag {
+            background-color: white;
+            border-radius: 3px;
+        }
+
+        .eu-flag,
+        .georgian-flag {
+            position: relative;
+            width: 200px;
+            height: 133px;
+        }
+
+        .big-cross .horizontal,
+        .big-cross .vertical {
+            position: absolute;
+            background-color: red;
+        }
+
+        .big-cross .horizontal {
+            width: 100%;
+            height: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .big-cross .vertical {
+            width: 30px;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .small-cross {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+        }
+
+        .small-cross::before,
+        .small-cross::after {
+            content: '';
+            position: absolute;
+            background-color: red;
+        }
+
+        .flag-container {
+            display: flex;
+            width: 300px;
+        }
+
+        .small-cross.top-left {
+            top: 10%;
+            left: 10%;
+        }
+
+        .small-cross.top-right {
+            top: 10%;
+            right: 10%;
+        }
+
+        .small-cross.bottom-left {
+            bottom: 10%;
+            left: 10%;
+        }
+
+        .small-cross.bottom-right {
+            bottom: 10%;
+            right: 10%;
+        }
+
+        .small-cross::before {
+            width: 25px;
+            height: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .small-cross::after {
+            height: 25px;
+            width: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+
+        }
+
+
+        .eu-flag {
+            background-color: #003399;
+            border-radius: 3px;
+        }
+
+        .star {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: yellow;
+            border-radius: 50%;
+            clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+    </style>
+
+    <script></script>
+</head>
+
+<body>
+
+    <div class="flag-container">
+
+        <div class="georgian-flag">
+            <div class="big-cross">
+                <div class="horizontal"></div>
+                <div class="vertical"></div>
+            </div>
+            <div class="small-cross top-left"></div>
+            <div class="small-cross top-right"></div>
+            <div class="small-cross bottom-left"></div>
+            <div class="small-cross bottom-right"></div>
+        </div>
+
+        <div class="eu-flag">
+            <div class="star" style="top: 20%; left: 50%;"></div>
+            <div class="star" style="top: 25%; left: 35%;"></div>
+            <div class="star" style="top: 25%; left: 65%;"></div>
+            <div class="star" style="top: 35%; left: 25%;"></div>
+            <div class="star" style="top: 35%; left: 75%;"></div>
+            <div class="star" style="top: 45%; left: 20%;"></div>
+            <div class="star" style="top: 45%; left: 80%;"></div>
+            <div class="star" style="top: 55%; left: 25%;"></div>
+            <div class="star" style="top: 55%; left: 75%;"></div>
+            <div class="star" style="top: 65%; left: 35%;"></div>
+            <div class="star" style="top: 65%; left: 65%;"></div>
+            <div class="star" style="top: 70%; left: 50%;"></div>
+        </div>
+    </div>
+
+
+    <div id="result">
+
+    </div>
+    <script>
+        /*
+        *
+        /
+        +
+        -
+
+        =
+        
+        +=
+        
+        -=
+
+
+        */
+
+       var b = 5;
+        {
+            let a = 5;
+            b=b*a;
+        }
+        document.getElementById("result").innerHTML = b;
+
+    </script>
+</body>
+
+</html>

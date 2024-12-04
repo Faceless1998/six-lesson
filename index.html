@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+
+
+    <script>
+        // var - მონაცემი რომელიც იცვლება, გლობალური
+        // let - მონაცემი რომელიც იცვლება, ლოკალური
+        // const - მონაცემი რომელიც არ იცვლება, გლობალური
+
+        // Number - რიცხვი
+        // String - სიტყვა / წინადადება
+        // Boolean - ლოგიკური ტიპი
+        // NULL - რიცხვი რომელიც არ გვაქვს
+        // Symbol - სიმბოლო რომელიც არ გვაქვს
+        // Undefined - განუსაზღვრელი
+        // NaN - Not a Number
+        // object - ელემენტი რომელსაც გააჩნია თვისებები
+
+        /*
+            +
+            -
+            *
+            /
+            % - ნაშთი
+            = - გატოლება / უდრის
+
+            ++ - ინკრემენტი, ერთით მომატება
+            -- - დეკრემენტი, ერთით დაკლება
+            ** - ხარისხი ნებისმიერი ინდექსით 
+        */
+
+        /*
+            += - ინახავს მის თავში არსებულ რიცხვს და ამატებს ახალს a=a+b
+            -= - ინახავს მის თავში არსებულ რიცხვს და აკლებს ახალს a=a-b
+            *= - ინახავს მის თავში არსებულ რიცხვს და ამატებს ახალს a=a*b
+            /= - ყოფს მოცემულ რიცხვს ახალ რიცხვზე a=a/b
+            **= - ახავს ხარისხში მოცემულ რიცხვი ახალ რიცხვზე a=a**b
+            %= - ახავს მოცემულ რიცხვის ნაშთს ახალ რიცხვზე  a=a%b
+        */
+
+        /*
+            == - ექვივალენტურია
+            === - მკაცრი ექვივალენტობა
+            ! - ლოგიკური საპირისპირო ელემენტი:
+                != - ექვივალენტობის საპირისპირო
+                !== - მკაცრი ექვივალენტობის საპირისპირო
+            > - მეტობა
+            < - ნაკლებობა
+            >= - მეტია ან ტოლი
+            <= - ნაკლებია ან ტოლი
+        */
+        /*
+                function myFirstFunc(c,d){
+        
+                    document.getElementById("demo").innerHTML = c+d;
+        
+                }
+        
+                myFirstFunc(5,8);
+        */
+
+        // function jarima(days) {
+        //     var billPerDay = 20;
+        //     var billPerWeek = 100;
+        //     var billPerMonth = 400;
+
+        //     var daysPerWeek = 7;
+        //     var daysPerMonth = 30;
+
+        //     // var totalPerMonth = parseInt(days / daysPerMonth) * billPerMonth;
+        //     var totalPerWeek = parseInt(days / daysPerWeek) * billPerWeek;
+        //     var totalPerDay = days % daysPerWeek * billPerDay;
+
+
+        //     document.getElementById("demo").innerHTML = totalPerWeek + totalPerDay;
+
+        // }
+
+        // jarima(40);
+
+
+        // 30 - tve 7 kvira 3 dge
+
+        // ფუნქცია რომელიც ამომიხსნის მართკუთხედის პერიმეტრს 2*(a+b)
+
+        function martkutxedi(a, b) {
+            var p = 2 * (a + b);
+            document.getElementById("demo").innerHTML = p;
+        }
+
+        function kvadrati(a){
+            martkutxedi(a,a);
+        }
+
+        kvadrati(5);
+
+        // martkutxedi(5,6)
+
+        
+    </script>
+</body>
+
+</html>
