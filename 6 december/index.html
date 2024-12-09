@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            display: block;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #demo{
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="demo"></div>
+
+    <script>
+        var get = document.getElementById("demo");
+
+        get.innerHTML += "<span>ragaca</span>";
+        get.innerHTML += "sxva ragaca<br>";
+        get.innerHTML += "sxva ragaca<br>";
+        get.innerHTML += "sxva ragaca<br>";
+        get.innerHTML += "sxva ragaca<br>";
+
+        // document.getElementById("demo").innerHTML = "ragaca"
+        // document.getElementById("demo").innerHTML = "sxva ragaca"
+        // document.getElementById("demo").innerHTML = "sxva ragaca"
+        // document.getElementById("demo").innerHTML = "sxva ragaca"
+        // document.getElementById("demo").innerHTML = "sxva ragaca"
+
+        /*
+            key - სახელები, რომლებსაც ობიექტი იყენებს
+            value - მნიშვნელობები, რომლებიც მიბმული არიან key ელემენტზე
+        
+
+        const car = {
+            carName:"Mercedes-benz",
+            carModel:"cls",
+            releaseDate:2018,
+            distance:30000,
+        }
+
+        const person = {
+            firstName:"John",
+            lastName:"Doe",
+            age:30,
+            id:611111111111,
+            fullName: function(){
+                return this.firstName + " " + this.lastName;
+            }
+        };
+
+        document.getElementById("demo").innerHTML = "Person: " +  person.fullName();
+        */
+
+        /*
+        Array - მასივი
+        
+
+        var MonthLastDays = [31,28,31,30,31,30,31,31,30,31,30,31];
+
+        MonthLastDays[1] = 29;
+
+        document.getElementById("demo").innerHTML = MonthLastDays[1];
+        */
+
+        var a = "This is sparta? sparta is a big city. sparta is a big city. sparta is a big city.";
+        get = document.getElementById("demo");
+        
+        /*
+        get.innerHTML = a.length; - ტექსტის ზომა
+        get.innerHTML = a.charAt(1); - ასო რომელიც ტექსტში X ადგილას მდებარეობს
+        get.innerHTML = a.charCodeAt(13); - მოცემული ასოს კოდი
+        get.innerHTML = a.at(1)  charAt ანალოგი
+        get.innerHTML = a.at(-2);
+        get.innerHTML = a.slice(10,-4); ტექსტის მოჭრა Xდან Yმდე
+        get.innerHTML = a.substring(2,13); ტექსტის მოჭრა Xდან Yმდე სადაც ორივე რიცხვდი დადებითია
+        get.innerHTML = a.substr(2,5) ტექსტის მოჭრა Xდან Y დაშორებით 
+        get.innerHTML = a.toUpperCase() ტექსტი დიდი ასოებით
+        get.innerHTML = a.toLowerCase() ტექსტი პატარა ასოებით
+        get.innerHTML = a.trim(); გარეგანი დაშორებების მოშლა
+        get.innerHTML = a.trimStart()
+        get.innerHTML = a.trimEnd()
+        get.innerHTML = a.padEnd(4,"Win") X ტექსტის სრული რაოდენობა , Y არის შევსება თუ ნაკლებია
+        get.innerHTML = a.padStart(4,"Win") X ტექსტის სრული რაოდენობა , Y არის შევსება თუ ნაკლებია
+        get.innerHTML = a.repeat(4) ტექსტის განმეორება
+        get.innerHTML = a.replace("sparta ".trim(), "Batumi") X სიტყვა ტექსტიდან, Y სიტყვა რომლითაც ვანაცვლებთ
+        get.innerHTML = a.replace(/sparta/g,"batumi") Regular Expresion a.k.a. RegEx
+        get.innerHTML = a.replaceAll("sparta","batumi");
+        get.innerHTML = a.split("."); დაყოს ტექსტი მასივად , გამყოფი ელემენტი არის X;
+        
+        b = a.indexOf("is");
+        get.innerHTML = a.indexOf("is");
+        get.innerHTML = a.lastIndexOf("is");
+        get.innerHTML = a.search(/is/g);
+        get.innerHTML = a.match("is");
+        var iterator = a.matchAll(/is/g);
+        get.innerHTML = Array.from(iterator).length;
+    
+        get.innerHTML = a.includes("is s",10) X არის ელემენტი რასაც ვეძებთ Y საიდანაც ვეძებთ 
+
+        get.innerHTML = a.startsWith("This is");
+        get.innerHTML = a.endsWith(".");
+        */
+
+        var text = "Lorem ipsum? This is sparta! No Way. No, No."
+        get.innerHTML = text.split("");
+    </script>
+</body>
+
+</html>
