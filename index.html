@@ -5,136 +5,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div id="demo"></div>
 
+
+    <div class="celscalc">
+        <div class="value">
+            <input type="text" id="temp">
+        </div>
+        <div class="buttons">
+            <button type="submit" onclick="celToFar()">Celsius to Fahrenheit</button>
+            <button type="submit" onclick="farToCel()">Fahrenheit to Celsius</button>
+        </div>
+        <div class="result">
+            <div class="demo" id="demo"></div>
+        </div>
+    </div>
+
+    <div class="currency">
+        <div class="container">
+            <div class="usd">
+                <div class="flag"></div>
+                <div class="curname">USD</div>
+                <div> <input type="text" id="curval"> </div>
+            </div>
+
+            <div class="middle">
+                <button type="button" id="calcbut" onclick="usdtogel()"> გადახურდავება </button>
+            </div>
+
+            <div class="gel">
+                <div class="flag"></div>
+                <div class="curname">GEL</div>
+                <div class="result"> <span id="result"></span> </div>
+            </div>
+        </div>
+    </div>
+
+
+    <input type="text" id="userprom">
+    <button type="button" onclick="shopping()">OK</button>
+
+    <div class="res" id="res"></div>
     <script>
-        var id = document.getElementById("demo");
-        /*
-                var x = "100"
-                var y = "10.1"
-        
-               id.innerHTML = parseInt(x) + parseFloat(y)
-               id.innerHTML = x + y
-               id.innerHTML = x - y
-               id.innerHTML = x * y
-               id.innerHTML = x / y
-        
-                var x = 0.1;
-                var y = 0.2;
-                id.innerHTML = x+y
-                id.innerHTML = ( x * 10 + y * 10 ) / 10
-        
-                var x = -9999999999999999999999999999999;
-                id.innerHTML = x;
-                
-                var x = 5.5279845;
-                id.innerHTML = x.toExponential(4) აბრუნებს რიცხვს
-                id.innerHTML = x.toFixed(0) აბრუნებს რიცხვს
-                id.innerHTML = x.toPrecision(2) აბრუნებს ტექსტს
-                
-               var x = 255;
-               id.innerHTML = x.toString()
-               id.innerHTML = x.toString(2)
-               id.innerHTML = x.toString(8)
-               id.innerHTML = x.toString(10)
-               id.innerHTML = x.toString(12)
-               id.innerHTML = x.toString(32)
-               id.innerHTML = x.toString(16) თვლის სხვადასხვა სისტემაზე გადასხვლა
-            
-                var x = 0xffffff + 0x123412;
-                id.innerHTML = x;
-           
+        //უმარტივესი გამოთვლა
+        // var celsius = 30;
+        // document.getElementById("demo").innerHTML = celsius * 9 / 5 + 32 + " <sup>o</sup>F"
 
-                var x = 9999999999999999999n + 15n;
-                id.innerHTML = x;
-
-             
-
-             var x = Number.MAX_SAFE_INTEGER
-             x = Number.MIN_SAFE_INTEGER
-             id.innerHTML = x ჩვენ შეგვიძლია -9007199254740991დან 9007199254740991მდე
-            
-            var x = Number.MAX_VALUE;
-            x = Number.MIN_VALUE;
-            id.innerHTML = x;
-            
-
-            var x = 500;
-            var y = new Number(500);
-            var z = new String("text")
-            id.innerHTML = (x===y)
-            
-
-            var x = new Date(); //"2010-07-12 12:32:34:345"
-            var year = x.getFullYear(); //წელი
-            var month = x.getMonth(); //თვე
-            var day = x.getDay(); //კვირის დღე (კვირიდან)
-            var date = x.getDate() //თვის რომელი დღეა
-            var hour = x.getHours()
-            var minutes = x.getMinutes()
-            var seconds = x.getSeconds()
-            var milliseconds = x.getMilliseconds()
-            var UTCyear = x.getUTCFullYear()
-            var UTCHour = x.getUTCHours();
-            id.innerHTML = x
-            */
-        // var x = 20;
-        // var y = 20;
-        // if(x>=y){
-        //     id.innerHTML = "X metia Yze"
+        //ფუნქციური გამოთვლა
+        // function celtofar(){
+        //     var id = document.getElementById("demo");
+        //     var celsius = 30;
+        //     var result = celsius * 9 / 5 + 32;
+        //     id.innerHTML = result + " <sup>o</sup>F"
         // }
-        // else{
-        //     id.innerHTML = "Y metia Xze"
-        // }
-        var pasuxi = 0;
-        var x = new Date(); //"2010-07-12 12:32:34:345"
-        var year = x.getFullYear(); //წელი
-        var month = x.getMonth(); //თვე
-        var date = x.getDate() //თვის რომელი დღეა
-        if (month > 11) {
-            pasuxi = year - 2000;
+        // celtofar();
+        //event გამოთვლა
+
+        function celToFar() {
+            var id = document.getElementById("demo");
+            var celsius = document.getElementById("temp").value;
+            var result = celsius * 9 / 5 + 32;
+            id.innerHTML = result + " <sup>o</sup>F"
         }
-        else if (month < 11) {
-            pasuxi = year - 2000 - 1;
-        } else if (month == 11) {
-            if (date > 12) {
-                pasuxi = year - 2000;
-            }
-            else if (date < 12) {
-                pasuxi = year - 2000 - 1;
-            }
+
+        function farToCel() {
+            var id = document.getElementById("demo");
+            var fahrenheit = document.getElementById("temp").value;
+            var result = (fahrenheit - 32) * 5 / 9;
+            id.innerHTML = result + " <sup>o</sup>C"
+        }
+
+
+        function usdtogel() {
+            var usdvalue = document.getElementById("curval").value;
+            var gelresult = document.getElementById("result");
+
+            gelresult.innerHTML = usdvalue * 2.82;
+        }
+
+
+        function shopping() {
+            var prod1 = 4;
+            var prod2 = 10;
+            var prod3 = 100;
+
+            var sum = prod1 + prod2 + prod3;
+
+            var promopercent = 50;
+            var promo = "11235813";
+
+            var sumpromo;
+            var userpromo = document.getElementById("userprom").value;
+            if (userpromo === promo)
+                sumpromo = sum - sum * promopercent / 100;
             else {
-                pasuxi = year - 2000;
+                sumpromo = sum;
             }
+
+            //ციკლი for loop
+
+
+
+            document.getElementById("res").innerHTML = sumpromo;
+
         }
-        id.innerHTML = pasuxi;
-
-        // var x = new Date(); //"2010-07-12 12:32:34:345"
-        // var year = x.getFullYear(); //წელი
-        // var month = x.getMonth(); //თვე
-        // var date = x.getDate() //თვის რომელი დღეა
-        // var pasuxi = year - 2000;
-
-        // if(month<11){
-        //     pasuxi-=1;
-        // }else if(month == 11){
-        //     if (date < 1) {
-        //         pasuxi-=1;
-        //     }
-        // }
-        
-        // id.innerHTML = pasuxi;
-
-
-        გამოთვალეთ ცელსიუსიდან ფარენჰაიტებში ტემპერატურა
-
-        
-
     </script>
-
 </body>
 
 </html>
