@@ -5,114 +5,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- <input type="text" id="mya">
+    <input type="text" id="myb">
 
-    <div class="celscalc">
-        <div class="value">
-            <input type="text" id="temp">
-        </div>
-        <div class="buttons">
-            <button type="submit" onclick="celToFar()">Celsius to Fahrenheit</button>
-            <button type="submit" onclick="farToCel()">Fahrenheit to Celsius</button>
-        </div>
-        <div class="result">
-            <div class="demo" id="demo"></div>
-        </div>
-    </div>
+    <div id="pasuxi"></div>
 
-    <div class="currency">
-        <div class="container">
-            <div class="usd">
-                <div class="flag"></div>
-                <div class="curname">USD</div>
-                <div> <input type="text" id="curval"> </div>
-            </div>
-
-            <div class="middle">
-                <button type="button" id="calcbut" onclick="usdtogel()"> გადახურდავება </button>
-            </div>
-
-            <div class="gel">
-                <div class="flag"></div>
-                <div class="curname">GEL</div>
-                <div class="result"> <span id="result"></span> </div>
-            </div>
-        </div>
-    </div>
-
-
-    <input type="text" id="userprom">
-    <button type="button" onclick="shopping()">OK</button>
-
-    <div class="res" id="res"></div>
+    <button onclick="jami()">OK</button>
+    
     <script>
-        //უმარტივესი გამოთვლა
-        // var celsius = 30;
-        // document.getElementById("demo").innerHTML = celsius * 9 / 5 + 32 + " <sup>o</sup>F"
 
-        //ფუნქციური გამოთვლა
-        // function celtofar(){
-        //     var id = document.getElementById("demo");
-        //     var celsius = 30;
-        //     var result = celsius * 9 / 5 + 32;
-        //     id.innerHTML = result + " <sup>o</sup>F"
-        // }
-        // celtofar();
-        //event გამოთვლა
-
-        function celToFar() {
-            var id = document.getElementById("demo");
-            var celsius = document.getElementById("temp").value;
-            var result = celsius * 9 / 5 + 32;
-            id.innerHTML = result + " <sup>o</sup>F"
+        function jami(){
+            var ricxvi1 = Number(document.getElementById("mya").value);
+            var ricxvi2 = Number(document.getElementById("myb").value);
+            var moqmedeba = ricxvi1 + ricxvi2;
+            document.getElementById("pasuxi").innerHTML = moqmedeba;
         }
 
-        function farToCel() {
-            var id = document.getElementById("demo");
-            var fahrenheit = document.getElementById("temp").value;
-            var result = (fahrenheit - 32) * 5 / 9;
-            id.innerHTML = result + " <sup>o</sup>C"
+    </script> -->
+
+
+
+    <!-- <input type="text" id="minutes">
+    <button onclick="MToS()">OK</button>
+    <div id="seconds"></div>
+
+    <script>
+        function MToS(){
+            var wuti = Number(document.getElementById("minutes").value);
+            var wami = wuti * 60;
+            document.getElementById("seconds").innerHTML = wami;
+        }
+    </script> -->
+
+    <!-- a:<input type="text" id="a">
+    b:<input type="text" id="b">
+    c:<input type="text" id="c">
+    h:<input type="text" id="h">
+
+    <button onclick="TrianglePer()">Perimeter</button>
+    <button onclick="TriangleArea()">Area</button>
+
+    <div id="perimetri"></div>
+    <div id="fartobi"></div>
+
+    <script>
+        function TriangleArea(){
+            var b = document.getElementById("b").value;
+            var h = document.getElementById("h").value;
+            var fartobi = Number(b) * Number(h) / 2;
+            document.getElementById("fartobi").innerHTML = fartobi;
         }
 
+        function TrianglePer(){
+            var a = Number(document.getElementById("a").value)
+            var b = Number(document.getElementById("b").value)
+            var c = Number(document.getElementById("c").value)
+            var perimetri = a+b+c;
+            document.getElementById("perimetri").innerHTML = perimetri;
+        }
+    </script> -->
 
-        function usdtogel() {
-            var usdvalue = document.getElementById("curval").value;
-            var gelresult = document.getElementById("result");
+    <!-- <input type="date" id="dabadeba">
+    <button onclick="dgeebiDabadebidan()">OK</button>
 
-            gelresult.innerHTML = usdvalue * 2.82;
+    <div id="pasuxi">დღეები გასული დაბადებიდან: </div>
+
+
+    <script>
+        function dgeebiDabadebidan(){
+            var dabadeba = document.getElementById("dabadeba").value;
+            var dabdge = new Date(dabadeba);
+            var now = new Date();
+            var timeDiff = now - dabdge;
+            var daysDiff = timeDiff / (1000*3600 * 24);
+            document.getElementById("pasuxi").innerHTML += Math.floor(daysDiff);
         }
 
-
-        function shopping() {
-            var prod1 = 4;
-            var prod2 = 10;
-            var prod3 = 100;
-
-            var sum = prod1 + prod2 + prod3;
-
-            var promopercent = 50;
-            var promo = "11235813";
-
-            var sumpromo;
-            var userpromo = document.getElementById("userprom").value;
-            if (userpromo === promo)
-                sumpromo = sum - sum * promopercent / 100;
-            else {
-                sumpromo = sum;
-            }
-
-            //ციკლი for loop
+        // document.getElementById("pasuxi").innerHTML = Math.abs(-10); //მოდული
+        // document.getElementById("pasuxi").innerHTML = Math.ceil(0.000000001) //დამრგვალება მთელს+1;
+        // document.getElementById("pasuxi").innerHTML = Math.floor(2.9999999999) //დამრგვალება აიღებს მხოლოდ მთელ რიცხვს
+        // document.getElementById("pasuxi").innerHTML = Math.round(2.4) //კლასიკური დამრგვალება
+        // document.getElementById("pasuxi").innerHTML = Math.trunc(2.4) //ჩამოცილება და მთელის დატოვება
+        // document.getElementById("pasuxi").innerHTML = Math.max(4,5,6,7,1,63,123,4,41,4,2);//მასივის უდიდესი რიცხვი
+        // document.getElementById("pasuxi").innerHTML = Math.min(4,5,6,7,1,63,123,4,41,4,2);//მასივის უმცირესი რიცხვი
+        // document.getElementById("pasuxi").innerHTML = Math.pow(2,10)//ხარისხი Xის Y
+        // document.getElementById("pasuxi").innerHTML = Math.sqrt(8)//კვადრატული ფესვი
+        // document.getElementById("pasuxi").innerHTML = Math.pow(X,1/Y) //Xის Y ფესვი 
+        // document.getElementById("pasuxi").innerHTML = Math.random()//შემთხვევითი რიცხვი
+        // document.getElementById("pasuxi").innerHTML = Math.floor(Math.random()*10+1);
+        // document.getElementById("pasuxi").innerHTML = Math.sign(5) //რა ნიშნის არის რიცხვი
+    </script> -->
 
 
-
-            document.getElementById("res").innerHTML = sumpromo;
-
-        }
-    </script>
 </body>
 
 </html>
