@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="demo"></div>
+    <script>
+
+        // var a = [1,5,3,7,12,15,11,83,75,32]
+        // a[3] = 8
+        // a[4] = 10
+        // var sorted = a.toSorted(function(a,b){return a-b;})
+        // a.sort( function(a,b){return a-b;} ) //compare function
+        // console.log( a )
+        // a.reverse()
+        // console.log( a )
+
+        // console.log( sorted )
+
+
+        // var x = ["Mango", "mandarini", "fortoxali"]
+        // console.log(x.length)
+        // console.log(x.toString())
+        // console.log(x)
+        // console.log(x.at(2))
+        // console.log(x.join(" "))
+
+        // x.pop() //washla bolodan
+        // console.log(x)
+
+        // x.push("kiwi") //damateba bolodan
+        // console.log(x)
+
+        // x.shift() //washla dasawyisidan
+        // console.log(x)
+
+        // x.unshift("Lemon") 
+        // console.log(x)
+
+        // delete x[0]
+        // delete x[1]
+        // delete x[2]
+
+        // console.log(x)
+
+        // var newArr = x.concat("lemon")
+        // var nova = ["lemon", "kiwi", "pineapple", "მსხალი", "ვაშლი", "ანანასი"]
+        // var Array = x.concat(nova)
+        // Array.sort()
+        // console.log(Array)
+
+        // var fruits = ["apple", "orange", "watermelon", "banana", "avocado"]
+        // console.log(fruits)
+        // //console.log(fruits.copyWithin(X, Y)) X რიგითი ნომრის მქონე ელემენტი ჩანაცვლეს Y ნომრის ელემენტით
+
+        // const newArray = [1,2,3,4,5] //ერთგანზომილებიანი მატრიცა
+        // var multyArray = [[1,2,3], [4,5,6], [7,8,9]]
+        // var a = multyArray[2][1]
+        // console.log(a)
+        // console.log(multyArray.flat())
+
+
+        var fruits = ["ვაშლი", "მსხალი", "ატამი"]
+        // fruits.splice(1, 2, "ხეჭეჭური", "ენესი")
+        document.getElementById('demo').innerHTML = fruits
+
+        // var x = "This is sparta"
+        // var text = x.slice(1,10) //უარყოფითი და დადებითი
+        // text = x.substring(1,10) //დადებითი
+        // text = x.substr(0,5)
+        // document.getElementById("demo").innerHTML = text
+        document.getElementById('demo').innerHTML = fruits.indexOf("ვაშლი")+1
+        document.getElementById('demo').innerHTML = fruits.lastIndexOf("ვაშლი")+1
+        document.getElementById('demo').innerHTML = fruits.includes("ვაშლი")
+        // var fruits = [1,2,85,5,12,456]
+        // fruits.sort(function(a,b){return a-b;})
+        document.getElementById('demo').innerHTML = fruits.find(myFinder)
+
+        function myFinder(value,index,array){
+            return value === "ვაშლი"//კონკრეტული და ელემენტები რომელიც დაწყებულია პირველიდან(0) და ნახავს პირველს
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .chamkrali,
+        .antebuli {
+            width: 100px;
+            height: 200px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .chamkrali {
+            background-image: url(./A19_3W_MainImage_1pk.webp);
+        }
+
+        .antebuli {
+            background-image: url(./02FEB23_LightBulbs_VN_100Watt_03.avif);
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="bulb()">OK</button>
+
+
+    <script>
+        var lighter = document.createElement("div");
+        var counter = 0;
+        document.body.appendChild(lighter)
+        lighter.classList.add("chamkrali")
+
+        function bulb() {
+            counter++;
+            if (counter % 2 == 1) {
+                lighter.classList.remove("chamkrali")
+                lighter.classList.add("antebuli")
+
+            }
+            else {
+                lighter.classList.remove("antebuli")
+
+                lighter.classList.add("chamkrali")
+            }
+        }
+    </script>
+</body>
+
+</html>
