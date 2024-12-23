@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const curYear = new Date().getFullYear;
+
+            //true or false
+            function isLeapYear(year) {
+                return (year % 4 === 0) || (year % 400 === 0)
+            }
+
+            const months = [
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+
+            const monthDays = [
+                31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+            ]
+
+            if (isLeapYear(curYear)) {
+                monthDays[1] = 29
+            }
+            //div რომელსაც მიანიჭა სტილები და მიაბა body-ს
+            const calendarContainer = document.createElement("div");
+            calendarContainer.style.display = "flex";
+            calendarContainer.style.flexWrap = "wrap";
+            calendarContainer.style.gap = "10px";
+            calendarContainer.style.justifyContent = "center";
+            document.body.appendChild(calendarContainer);
+
+            months.forEach((month, index) => {
+                const monthContainer = document.createElement("div");
+                monthContainer.style.border = "1px solid black";
+                monthContainer.style.width = "180px"
+                monthContainer.style.padding = "10px"
+                monthContainer.style.textAlign = "center"
+                monthContainer.style.backgroundColor = "#f9f9f9"
+
+                const monthName = document.createElement("h3");
+                monthName.style.margin = "0 0 10px 0";
+                monthName.style.fontSize = "16px";
+                monthName.textContent = month
+
+                monthContainer.appendChild(monthName);
+
+                const daysContainer = document.createElement("div");
+                daysContainer.style.display = "grid"
+                daysContainer.style.gap = "2px";
+                daysContainer.style.gridTemplateColumns = "repeat(7, 1fr)"
+
+                const dayHeaders = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+                dayHeaders.forEach((day) => {
+                    const dayHeader = document.createElement("div");
+                    dayHeader.textContent = day;
+                    dayHeader.style.fontWeight = "bold"
+                    dayHeader.style.fontSize = "12px"
+                    dayHeader.style.textAlign = "center"
+                    dayHeader.style.borderBottom = "1px solid #ccc";
+                    if (day === "Sat" || day === "Sun") {
+                        dayHeader.style.color = "red";
+                    }
+
+
+                    daysContainer.appendChild(dayHeader)
+                })
+
+
+
+                const days = monthDays[index];
+
+                var firstDay = new Date(curYear, index, 1).getDay();
+                if (firstDay === 0) {
+                    firstDay = 6;
+                }
+                else {
+                    firstDay = firstDay - 1;
+                }
+
+                for (var i = 0; i < firstDay; i++) {
+                    const emptySlot = document.createElement("div");
+                    emptySlot.style.height = "20px";
+                    daysContainer.appendChild(emptySlot)
+                }
+
+
+                for (var day = 1; day <= days; day++) {
+                    const dayElement = document.createElement("div");
+                    dayElement.textContent = day;
+                    dayElement
+
+                    daysContainer.appendChild(dayElement)
+                }
+
+                monthContainer.appendChild(daysContainer);
+                calendarContainer.appendChild(monthContainer);
+            })
+        })
+
+    </script>
+
+</body>
+
+</html>
