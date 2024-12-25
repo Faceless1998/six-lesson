@@ -1,7 +1,7 @@
 :root {
   --clock-size: 480px;
   --hand-thickness: calc(var(--clock-size) * 0.03);
-  --marker-distance: calc(var(--clock-size) * 0.3);
+  --marker-distance: calc(var(--clock-size) * 0.4325);
 }
 
 body {
@@ -86,4 +86,33 @@ body {
     background-color: red;
     border-radius: 50%;
     position: absolute;
+}
+
+.hour-markers, .minute-markers{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hour-marker{
+  position: absolute;
+  color: white;
+  transform-origin: center;
+  font-size: 16px;
+  transform: rotate(var(--rotation)) translateY(calc(-1 * var(--marker-distance)));
+}
+.hour-marker span{
+  display: block;
+}
+
+.minute-marker{
+  position: absolute;
+  width: calc(var(--clock-size) * 0.004);
+  height: calc(var(--clock-size) * 0.0225);
+  transform-origin: center;
+  background-color: rgba(255,255,255,0.3);
+  transform: rotate(var(--rotation)) translateY(calc(-1 * 0.4325 * var(--clock-size)));
 }
