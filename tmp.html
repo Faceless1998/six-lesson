@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            width: 100%;
+            background-color: aliceblue;
+        }
+
+        .header {
+            width: 100%;
+            height: 100px;
+            background-color: rgb(72, 72, 193);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        .logo img {
+            width: 40px;
+            margin: 0 15px 0 25px;
+
+        }
+
+        .menu {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .address-box {
+            width: 280px;
+            height: 70px;
+            background-color: rgb(37, 47, 160);
+            border-radius: 40px;
+            display: flex;
+            position: relative;
+            margin-left: 30px;
+        }
+
+        .address-box img {
+            width: 30px;
+            height: 30px;
+            margin-top: 15px;
+            margin-left: 7px;
+        }
+
+        .address-box:hover {
+            background-color: rgb(68, 68, 158);
+        }
+
+        .text {
+            margin-top: 15px;
+            margin-left: 15px;
+            color: white;
+        }
+
+        .text h2 {
+            font-size: 15px;
+
+
+        }
+
+        .arrow-icon {
+            position: absolute;
+
+        }
+
+        .dropdown-menu {
+            display: none;
+        }
+
+        .dropdown-menu:hover {
+            display: block;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        input {
+            width: 400px;
+            height: 70px;
+            border-radius: 40px;
+            border: none;
+        }
+
+        input::placeholder {
+            padding-left: 25px;
+            color: rgb(72, 72, 193);
+            ;
+        }
+
+        button {
+            position: absolute;
+            top: 20px;
+            right: 5px;
+            width: 35px;
+            height: 35px;
+            border-radius: 50px;
+            background-color: rgb(37, 47, 160);
+            border: none;
+            cursor: pointer;
+        }
+
+        .items {
+            width: 110px;
+            height: 65px;
+            color: white;
+            border-radius: 40px;
+            position: relative;
+        }
+
+        .items i {
+            position: absolute;
+            top: 20px;
+            margin-left: 5px;
+        }
+
+        .items p {
+            margin-top: 15px;
+            margin-left: 25px;
+        }
+
+        .items h4 {
+            font-weight: bold;
+            margin-left: 25px;
+            margin-top: 3px;
+        }
+
+        .items:hover {
+            background-color: rgb(68, 68, 158);
+        }
+
+        .account {
+            width: 90px;
+            height: 65px;
+            border-radius: 40px;
+            position: relative;
+            cursor: pointer;
+
+        }
+
+        .account i {
+            position: absolute;
+            top: 25px;
+            left: 3px;
+            color: white;
+        }
+
+        .account p {
+            margin-top: 18px;
+            margin-left: 20px;
+            color: white;
+        }
+
+        .account h4 {
+            margin-left: 20px;
+            color: white;
+        }
+
+        .account:hover {
+            background-color: rgb(68, 68, 158);
+        }
+
+        .cart {
+            width: 70px;
+            height: 60px;
+            color: white;
+            margin-right: 40px;
+            margin-top: 5px;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+
+        .cart i {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .price {
+            margin-left: 20px;
+        }
+
+
+
+        .cart:hover {
+            background-color: rgb(68, 68, 158);
+        }
+
+        .board {
+            position: relative;
+            width: 100%;
+            height: 70px;
+            background-color: rgba(236, 236, 251, 0.4);
+            
+        }
+        .board button{
+            top: 0;
+            left:0
+        }
+        button.departments {
+            width: 70px;
+            height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="assets/Walmart_Spark.svg.png">
+        </div>
+        <div class="menu">
+            <div class="address-box">
+                <img src="assets/k2-_0a671c38-d307-447c-835e-7904ab143c26.v1.webp">
+                <div class="text">
+                    <h2>How do you want your items?</h2>
+                    <p>Sacramento,95829</p>
+                </div>
+            </div>
+            <div class="arrow-icon">
+                <i class='bx bx-down-arrow-alt'></i>
+                <div class="dropdown-menu">
+                    <div class="image-container">
+                        <div class="shipping">
+                            <img src="assets/k2-_4be6f532-b0b2-4480-bb65-d53586e87193.v1.png">
+                            <p>Shipping</p>
+                        </div>
+                        <div class="pickup">
+                            <img src="assets/k2-_333618e2-7327-4081-990e-7870dd062248.v1.png">
+                            <p>Pickup</p>
+                        </div>
+                        <div class="delivery">
+                            <img src="assets/k2-_c8d39665-dac4-474a-9fb7-ab5feeb647b5.v1.png">
+                            <p>delivery</p>
+                        </div>
+                        <div class="address-data">
+                            <i class='bx bx-location-plus'></i>
+                            <div class="heading">Add an address for shipping and delivery</div>
+                            <p class="address">Sacramento, CA 95829</p>
+                            <button>Add address</button>
+                        </div>
+                        <div class="delivery-address">
+                            <i class='bx bx-home'></i>
+                            <div class="heading">Sacramento Supercenter</div>
+                            <p class="delivery-address">8915 GERBER ROAD, Sacramento, CA</p>
+                            <i class='bx bx-check'>Curbside pickup</i>
+                            <i class='bx bx-check'>In-store pickup</i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <form>
+                <div class="search-box">
+                    <input type="text" placeholder="Search everything at walmart">
+
+                    <button><i class="fa fa-search"></i></button>
+
+                </div>
+            </form>
+
+            <div class="items">
+                <i class='bx bxs-heart'></i>
+                <p class="reorder">Reorder</p>
+                <h4>My Items</h4>
+            </div>
+            <div class="account">
+                <i class='bx bx-user'></i>
+                <p class="sign">Sign In</p>
+                <h4>Account</h4>
+            </div>
+            <div class="cart">
+                <i class='bx bx-cart'></i>
+                <div class="price">$0.00</div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="board">
+        <button class="departments">
+            <i class='bx bx-checkbox'></i>
+            <p>Departments</p>
+            <i class='bx bx-down-arrow-alt'></i>
+        </button>
+        <ul class="links">
+            <li><a href=""></a></li>
+        </ul>
+    </div>
+
+
+</body>
+
+</html>
