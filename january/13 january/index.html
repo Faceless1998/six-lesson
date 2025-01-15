@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="demo"></div>
+    <script>
+        var pas = document.getElementById("demo")
+
+        // var a = [10,20,30,40,50,60,70,80,90,100,10]
+        // pas.innerHTML = a.length
+
+        // var a = new Array(10,20,30,40,50,60,70,80,90,100,10)
+        // pas.innerHTML = a.length
+
+        // var numbers = new Set([10,20,30,40,50,10,20,30,40,10,20,60]) //ელემენტი უნიკალური მნიშვნელობებით
+        // numbers.add(70)
+        // numbers.delete(80)
+        // numbers.clear()
+        // numbers.add(70)
+        // pas.innerHTML = numbers.size
+
+        // var text = new String("");
+        // for(var x of numbers){
+        //     text+=x+" ";
+        // }
+
+        // pas.innerHTML = text
+        // pas.innerHTML = numbers.has(10)
+
+        // pas.innerHTML = text instanceof String
+
+        // var list = new Map([
+        //     ["apple", 4],
+        //     ["banana", 8],
+        //     ["sunflower", 2]
+        // ]);
+
+        // list.set("watermelon", 10)
+        // // list.clear()
+        
+        // pas.innerHTML = list.has("apple");
+
+        //Destructuring
+
+        // const person = {
+        //     firstname: "John",
+        //     lastname: "Doe",
+        //     age: 25
+        // }
+
+        // var {firstname: name} = person;
+        // var {lastname: surname} = person;
+        // var {age: asaki} = person;
+
+        // pas.innerHTML = person.firstname + person.lastname + person.age
+        // pas.innerHTML = name + surname + asaki
+
+        const numbers = [10,20,30,40,50,60,70,80,90,100,10]
+        var [a1,a2,, ...dan] = numbers
+        pas.innerHTML = dan
+    </script>
+
+
+</body>
+</html>
