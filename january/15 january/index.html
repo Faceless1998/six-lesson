@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Standings</title>
+    <style>
+        #standings-list {
+            font-family: Arial, sans-serif;
+            margin-top: 20px;
+        }
+
+        .team {
+            margin-bottom: 15px;
+        }
+
+        .team img {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Create a div where the standings will be displayed -->
+    <div id="standings-list"></div>
+
+    <script>
+        const latitude = 41.6168;
+        const longitude = 41.6279;
+        const apiKey = '016a99e7e13ab5022e23c5e1d8268ae6';  // WeatherStack API key
+
+        // Define the API URL
+        const url = `http://api.weatherstack.com/current?access_key=${apiKey}&query=${latitude},${longitude}`;
+
+        // Fetch data from the WeatherStack API
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Log the weather data
+                console.log("Current weather in Batumi:");
+                console.log(`Temperature: ${data.current.temperature}°C`);
+                console.log(`Weather: ${data.current.weather_descriptions[0]}`);
+                console.log(`Humidity: ${data.current.humidity}%`);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+
+    </script>
+
+</body>
+
+</html>

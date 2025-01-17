@@ -4,59 +4,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Football Standings</title>
-    <style>
-        #standings-list {
-            font-family: Arial, sans-serif;
-            margin-top: 20px;
-        }
-
-        .team {
-            margin-bottom: 15px;
-        }
-
-        .team img {
-            width: 30px;
-            height: 30px;
-            vertical-align: middle;
-            margin-right: 10px;
-        }
-    </style>
+    <title>Document</title>
 </head>
 
 <body>
 
-    <!-- Create a div where the standings will be displayed -->
-    <div id="standings-list"></div>
+    <div id="demo"> </div>
+    <!-- <script>
+
+        // "use strict"
+        let x = 30;
+        delete x;
+       console.log(x)
+
+    </script> -->
+
+    <!-- <script>
+
+        // classical functions
+        function myFunc(a, b) {
+            return a * b;
+        }
+        var a = myFunc(a, b)
+
+        //arrow functions
+        var b = (a, b) => a * b;
+
+        //arrow function's early version
+        var c = function (a, b) {
+            return a * b;
+        }
+
+        //arrow with parameters
+        var hello = ""
+        hello = (val) => "Hello " + val;
+        document.getElementById("demo").innerHTML = hello("me")
+
+
+        //arrow without parent element
+        var hello = ""
+        hello = val => "Hello " + val;
+
+
+        document.getElementById("demo").innerHTML = hello("")
+    </script> -->
+
+
+
+    <!-- <script type="module">
+        import triangle from "./script.js"
+        import {area, perimeter} from "./script.js"
+        // for (var i = 1; i < 10; i++) {
+        //     for (var j = 1; j < 10; j++) {
+        //         document.getElementById("demo").innerHTML += triangle(i,j) + " "
+        //     }
+        // }
+
+        document.getElementById("demo").innerHTML = triangle(area, perimeter);
+    </script> -->
+
 
     <script>
-        const latitude = 41.6168;
-        const longitude = 41.6279;
-        const apiKey = '016a99e7e13ab5022e23c5e1d8268ae6';  // WeatherStack API key
 
-        // Define the API URL
+        const latitude = 41.6168
+        const longitude = 41.6279
+        const apiKey = '';
         const url = `http://api.weatherstack.com/current?access_key=${apiKey}&query=${latitude},${longitude}`;
 
-        // Fetch data from the WeatherStack API
         fetch(url)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
+            .then(
+                response => {
+                    if (!response.ok) {
+                        throw new Error('Network error');
+                    }
+                    return response.json()
                 }
-                return response.json();
-            })
+            )
             .then(data => {
-                // Log the weather data
-                console.log("Current weather in Batumi:");
-                console.log(`Temperature: ${data.current.temperature}°C`);
-                console.log(`Weather: ${data.current.weather_descriptions[0]}`);
-                console.log(`Humidity: ${data.current.humidity}%`);
+                var mydiv = document.createElement("div");
+                mydiv.textContent = data.current.feelslike;
+                console.log(data)
+                document.body.appendChild(mydiv);
             })
             .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-            });
+                console.log("my error: ", error)
+            })
+
 
     </script>
+
 
 </body>
 

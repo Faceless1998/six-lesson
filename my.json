@@ -1,0 +1,11 @@
+{
+  "fruits": [
+    { "name": "lemon", "type": "cytrus" },
+    { "name": "nolemon", "type": "vegetable" },
+    { "name": "yeslemon", "type": "notable" },
+    {}
+  ],
+  "vegetables": [
+    {}
+  ]
+}
