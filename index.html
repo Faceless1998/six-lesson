@@ -1,99 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="https://picsum.photos/1920/1080?random=1" alt="image">
+            <img src="https://picsum.photos/1920/1080?random=2" alt="image">
+            <img src="https://picsum.photos/1920/1080?random=3" alt="image">
+            <img src="https://picsum.photos/1920/1080?random=4" alt="image">
+        </div>
 
-    <div id="demo"> </div>
-    <!-- <script>
+        <button class="slider-button prev" aria-label="Previous slide"> &lt; </button>
+        <button class="slider-button next" aria-label="Next slide"> &gt; </button>
 
-        // "use strict"
-        let x = 30;
-        delete x;
-       console.log(x)
-
-    </script> -->
-
-    <!-- <script>
-
-        // classical functions
-        function myFunc(a, b) {
-            return a * b;
-        }
-        var a = myFunc(a, b)
-
-        //arrow functions
-        var b = (a, b) => a * b;
-
-        //arrow function's early version
-        var c = function (a, b) {
-            return a * b;
-        }
-
-        //arrow with parameters
-        var hello = ""
-        hello = (val) => "Hello " + val;
-        document.getElementById("demo").innerHTML = hello("me")
-
-
-        //arrow without parent element
-        var hello = ""
-        hello = val => "Hello " + val;
-
-
-        document.getElementById("demo").innerHTML = hello("")
-    </script> -->
+    </div>
 
 
 
-    <!-- <script type="module">
-        import triangle from "./script.js"
-        import {area, perimeter} from "./script.js"
-        // for (var i = 1; i < 10; i++) {
-        //     for (var j = 1; j < 10; j++) {
-        //         document.getElementById("demo").innerHTML += triangle(i,j) + " "
-        //     }
-        // }
-
-        document.getElementById("demo").innerHTML = triangle(area, perimeter);
-    </script> -->
-
-
-    <script>
-
-        const latitude = 41.6168
-        const longitude = 41.6279
-        const apiKey = '';
-        const url = `http://api.weatherstack.com/current?access_key=${apiKey}&query=${latitude},${longitude}`;
-
-        fetch(url)
-            .then(
-                response => {
-                    if (!response.ok) {
-                        throw new Error('Network error');
-                    }
-                    return response.json()
-                }
-            )
-            .then(data => {
-                var mydiv = document.createElement("div");
-                mydiv.textContent = data.current.feelslike;
-                console.log(data)
-                document.body.appendChild(mydiv);
-            })
-            .catch(error => {
-                console.log("my error: ", error)
-            })
-
-
-    </script>
-
-
+    <script src="script.js"></script>
 </body>
-
 </html>
