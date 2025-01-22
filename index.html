@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
+
 <body>
-    
-    <div class="carousel">
-        <div class="carousel-images">
-            <img src="https://picsum.photos/1920/1080?random=1" alt="image">
-            <img src="https://picsum.photos/1920/1080?random=2" alt="image">
-            <img src="https://picsum.photos/1920/1080?random=3" alt="image">
-            <img src="https://picsum.photos/1920/1080?random=4" alt="image">
+
+    <nav class="bg-gray-800 text-white">
+
+        <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+
+            <div class="flex justify-between h-16">
+
+                <div class="flex items-center">
+                    <a href="#" class="text-lg font-bold">Walmart</a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#" class="hover:text-gray-300">Home</a>
+                    <a href="#" class="hover:text-gray-300">About</a>
+                    <a href="#" class="hover:text-gray-300">Service</a>
+                    <a href="#" class="hover:text-gray-300">Portfolio</a>
+                    <a href="#" class="hover:text-gray-300">Contact</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="menu-toggle" class="">
+                        
+                        <svg  class="w-6 h-6 text-white"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM7 12C7 11.4477 7.44772 11 8 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H8C7.44772 13 7 12.5523 7 12ZM13 18C13 17.4477 13.4477 17 14 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H14C13.4477 19 13 18.5523 13 18Z" fill="#fff"/>
+                            </svg>
+                    </button>
+                </div>
+            </div>
         </div>
+    </nav>
 
-        <button class="slider-button prev" aria-label="Previous slide"> &lt; </button>
-        <button class="slider-button next" aria-label="Next slide"> &gt; </button>
-
-    </div>
-
-
-
-    <script src="script.js"></script>
 </body>
+
 </html>
