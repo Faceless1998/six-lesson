@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <style>
+        .myclass {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="w-4/5 mx-auto relative h-20 overflow-hidden h-auto">
+        <button
+            class="absolute top-1/2 left-2 -translate-y-1/2 bg-cyan-500 text-white px-4 py-2 rounded text-2xl shadow hover:bg-cyan-600 z-10"
+            id="prevBtn">
+            &#8592;
+        </button>
+
+        <button
+            class="absolute top-1/2 right-2 -translate-y-1/2 bg-cyan-500 text-white px-4 py-2 rounded text-2xl shadow hover:bg-cyan-600 z-10"
+            id="nextBtn">
+            &#8594;
+        </button>
+
+
+        <div class="overflow-hidden">
+            <div class="flex" id="sliderTrack">
+
+                <div class="w-1/5 px-4 flex-shrink-0">
+                    <div class="bg-white border rounded flex flex-col items-center p-3">
+                        <img src="https://picsum.photos/300/200?random=1"
+                            class="mb-2 w-full max-h-64 h-auto object-contain" />
+                        <div class="text-center font-serif">Product 1</div>
+                    </div>
+                </div>
+
+                <div class="w-1/5 px-4 flex-shrink-0">
+                    <div class="bg-white border rounded flex flex-col items-center p-3">
+                        <img src="https://picsum.photos/300/200?random=2"
+                            class="mb-2 w-full max-h-64 h-auto object-contain" />
+                        <div class="text-center font-serif">Product 2</div>
+                    </div>
+                </div>
+
+                <div class="w-1/5 px-4 flex-shrink-0">
+                    <div class="bg-white border rounded flex flex-col items-center p-3">
+                        <img src="https://picsum.photos/300/200?random=3"
+                            class="mb-2 w-full max-h-64 h-auto object-contain" />
+                        <div class="text-center font-serif">Product 3</div>
+                    </div>
+                </div>
+
+                <div class="w-1/5 px-4 flex-shrink-0">
+                    <div class="bg-white border rounded flex flex-col items-center p-3">
+                        <img src="https://picsum.photos/300/200?random=4"
+                            class="mb-2 w-full max-h-64 h-auto object-contain" />
+                        <div class="text-center font-serif">Product 4</div>
+                    </div>
+                </div>
+
+                <div class="w-1/5 px-4 flex-shrink-0">
+                    <div class="bg-white border rounded flex flex-col items-center p-3">
+                        <img src="https://picsum.photos/300/200?random=5"
+                            class="mb-2 w-full max-h-64 h-auto object-contain" />
+                        <div class="text-center font-serif">Product 5</div>
+                    </div>
+                </div>
+
+                <div class="w-1/5 px-4 flex-shrink-0">
+                    <div class="bg-white border rounded flex flex-col items-center p-3">
+                        <img src="https://picsum.photos/300/200?random=6"
+                            class="mb-2 w-full max-h-64 h-auto object-contain" />
+                        <div class="text-center font-serif">Product 6</div>
+                    </div>
+                </div>
+
+                <div class="w-1/5 px-4 flex-shrink-0">
+                    <div class="bg-white border rounded flex flex-col items-center p-3">
+                        <img src="https://picsum.photos/300/200?random=7"
+                            class="mb-2 w-full max-h-64 h-auto object-contain" />
+                        <div class="text-center font-serif">Product 7</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const track = document.getElementById("sliderTrack");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+
+        var currentElement = 0;
+
+        function updateSlider(){
+            
+        }
+
+        prevBtn.addEventListener("click", ()=>{
+            if( currentElement > 0 ){
+                currentElement--;
+                updateSlider()
+            }
+        })
+
+        nextBtn.addEventListener("click", ()=>{
+
+            const containerWidth = document.querySelector(".overflow-hidden").offsetWidth;
+            const totalProducts = document.querySelectorAll("[class*='w-1/5']").length;
+            const productWidth = document.querySelector("[class*='w-1/5']").offsetWidth + 16;
+            const visibleProducts = totalProducts - Math.floor(containerWidth / productWidth)
+
+            if( currentElement < visibleProducts ){
+                currentElement++;
+                updateSlider()
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>
