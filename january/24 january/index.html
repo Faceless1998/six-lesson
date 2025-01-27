@@ -33,7 +33,7 @@
 
 
         <div class="overflow-hidden">
-            <div class="flex" id="sliderTrack">
+            <div class="flex transition-transform duration-300 ease-in-out" id="sliderTrack">
 
                 <div class="w-1/5 px-4 flex-shrink-0">
                     <div class="bg-white border rounded flex flex-col items-center p-3">
@@ -103,30 +103,31 @@
 
         var currentElement = 0;
 
-        function updateSlider(){
-            
+        function updateSlider() {
+            const productWidth = document.querySelector("[class*='w-1/5']").offsetWidth + 16;
+            const screenWidth = -currentElement * productWidth;
+            track.style.transform = `translateX(${screenWidth}px)`;
         }
 
-        prevBtn.addEventListener("click", ()=>{
-            if( currentElement > 0 ){
+        prevBtn.addEventListener("click", () => {
+            if (currentElement > 0) {
                 currentElement--;
-                updateSlider()
+                updateSlider();
             }
         })
 
-        nextBtn.addEventListener("click", ()=>{
+        nextBtn.addEventListener("click", () => {
 
             const containerWidth = document.querySelector(".overflow-hidden").offsetWidth;
             const totalProducts = document.querySelectorAll("[class*='w-1/5']").length;
             const productWidth = document.querySelector("[class*='w-1/5']").offsetWidth + 16;
             const visibleProducts = totalProducts - Math.floor(containerWidth / productWidth)
 
-            if( currentElement < visibleProducts ){
+            if (currentElement < visibleProducts - 1) {
                 currentElement++;
-                updateSlider()
+                updateSlider();
             }
         })
-
     </script>
 
 </body>
