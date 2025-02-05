@@ -5,95 +5,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .done {
-            text-decoration: line-through;
-            color: green;
-            text-decoration-color: red;
-        }
-    </style>
 </head>
 
 <body>
-    <div>
-        <h1>To Do List</h1>
 
-        <div>
-            <input type="text" id="taskInput">
-            <button id="taskAdd">Add</button>
-        </div>
+    <input type="text" id="days" required>
+    <button onclick="result()">OK</button>
 
-        <div id="taskList"></div>
+    <br><br><br><br>
+
+    <input type="text" id="word">
+    <button onclick="newWord()">OK</button>
+    <br><br><br><br>
+
+    <input type="text" id="red">
+    <input type="text" id="green">
+    <input type="text" id="blue">
+    <br>
+    <button onclick="useColor()">OK</button>
+
+    <div id="example">
+
     </div>
 
+    <div id="modified">
+
+    </div>
     <script>
-        const taskInput = document.getElementById("taskInput");
-        const taskAdd = document.getElementById("taskAdd");
-        const taskList = document.getElementById("taskList");
 
-        function addTask() {
-            const taskText = taskInput.value.trim();
-            if (taskText !== "") {
-                const listElement = document.createElement("div");
-                listElement.textContent = taskText;
+        function result() {
 
-                const removeBtn = document.createElement("button");
-                removeBtn.textContent = "Del"
-                //removeBtn.innerHTML = "<i class='fa fa-trash'></i>"
-                removeBtn.addEventListener("click", () => {
-                    removeElement(listElement);
-                })
+            var days = document.getElementById("days").value;
 
+            if (days == "") {
+                alert("Input Value");
+                return;
+            }
 
-                const doneBtn = document.createElement("button");
-                doneBtn.textContent = "Done"
-                doneBtn.addEventListener("click", () => {
-                    doneElement(listElement);
-                })
+            const daysFine = 20;
+            const weeksFine = 50;
+            const monthFine = 200;
 
+            const daysInWeek = 7;
+            const daysInMonth = 30;
 
-                listElement.appendChild(doneBtn)
-                listElement.appendChild(removeBtn)
+            var totalFine = 0;
 
-                taskList.appendChild(listElement);
+            if (days < daysInWeek) {
+                totalFine = days * daysFine;
+            } else if (days > daysInWeek && days < daysInMonth) {
+                totalFine = parseInt(days / daysInWeek) * weeksFine + (days % daysInWeek) * daysFine;
+            } else {
+                var daysMonths = days % daysInMonth;
+                var monthsCount = parseInt(days / daysInMonth);
+                var weeksCount = parseInt(daysMonths / daysInWeek);
+                var leftDays = daysMonths % daysInWeek;
 
-                const tasks = JSON.parse(localStorage.getItem("tasks")) || []
-                tasks.push(taskText);
-                localStorage.setItem("tasks", JSON.stringify(tasks));
-
-                taskInput.value = "";
+                totalFine = monthsCount * monthFine + weeksCount * weeksFine + leftDays * daysFine;
 
             }
 
-        }
-
-        function removeElement(listElement) {
-            const taskText = listElement.textContent.replace("DoneDel", "");
-
-            listElement.remove();
-
-            const tasks = JSON.parse(localStorage.getItem("tasks")) || []
-            const updateTasks = tasks.filter(task => task !== taskText);
-            localStorage.setItem("tasks", JSON.stringify(updateTasks));
-
-            console.log(tasks);
-        }
-
-        function doneElement(listElement) {
-            listElement.classList.add("done");
+            var answer = document.createElement("div");
+            answer.textContent = totalFine + " ლარი";
+            document.body.appendChild(answer);
         }
 
 
+        function newWord() {
+            var myWord = document.getElementById("word").value;
+            var wordArray = myWord.split("");
+            wordArray.shift();
+            var newWord = wordArray.join("");
+            var wordDiv = document.createElement("div");
+            wordDiv.textContent = newWord;
+            document.body.appendChild(wordDiv);
+        }
 
-        taskAdd.addEventListener("click", addTask);
-        taskInput.addEventListener("keypress", (e) => {
-            if (e.key === "Enter") {
-                addTask();
+        function useColor() {
+            var red = document.getElementById("red").value;
+            var green = document.getElementById("green").value;
+            var blue = document.getElementById("blue").value;
+
+            if( red < 0 || green < 0 || blue < 0 || red > 255 || green > 255 || blue > 255 ){
+                document.getElementById("red") = ""
+                document.getElementById("green") = ""
+                document.getElementById("blue") = ""
+                alert("arasworia");
+                return;
             }
-        })
+            
+
+            var original = document.getElementById("example");
+            var reversed = document.getElementById("modified");
 
 
+            original.style.backgroundColor = `rgb( ${red}, ${green} , ${blue})`
+            original.style.width = "50px"
+            original.style.height = "50px"
+            original.style.border = "1px solid purple"
+
+            reversed.style.width = "50px"
+            reversed.style.height = "50px"
+            reversed.style.border = "1px solid purple"
+
+            var rred = 255 - red;
+            var rgreen = 255 - green;
+            var rblue = 255 - blue;
+            reversed.style.backgroundColor = `rgb(${rred}, ${rgreen} , ${rblue})`
+
+        }
     </script>
+
+
 </body>
 
 </html>
