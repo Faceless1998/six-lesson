@@ -29,92 +29,228 @@
     </div>
 
     <div id="modified">
-
     </div>
+
+
+    <input type="text" id="leapyear">
+    <button onclick="leapYear()">OK</button>
+
+    <div id="result"></div>
+
+
+
     <script>
+        {
+            function result() {
 
-        function result() {
+                var days = document.getElementById("days").value;
 
-            var days = document.getElementById("days").value;
+                if (days == "") {
+                    alert("Input Value");
+                    return;
+                }
 
-            if (days == "") {
-                alert("Input Value");
-                return;
+                const daysFine = 20;
+                const weeksFine = 50;
+                const monthFine = 200;
+
+                const daysInWeek = 7;
+                const daysInMonth = 30;
+
+                var totalFine = 0;
+
+                if (days < daysInWeek) {
+                    totalFine = days * daysFine;
+                } else if (days > daysInWeek && days < daysInMonth) {
+                    totalFine = parseInt(days / daysInWeek) * weeksFine + (days % daysInWeek) * daysFine;
+                } else {
+                    var daysMonths = days % daysInMonth;
+                    var monthsCount = parseInt(days / daysInMonth);
+                    var weeksCount = parseInt(daysMonths / daysInWeek);
+                    var leftDays = daysMonths % daysInWeek;
+
+                    totalFine = monthsCount * monthFine + weeksCount * weeksFine + leftDays * daysFine;
+
+                }
+
+                var answer = document.createElement("div");
+                answer.textContent = totalFine + " ლარი";
+                document.body.appendChild(answer);
             }
 
-            const daysFine = 20;
-            const weeksFine = 50;
-            const monthFine = 200;
+            function newWord() {
+                var myWord = document.getElementById("word").value;
+                var wordArray = myWord.split("");
+                wordArray.shift();
+                var newWord = wordArray.join("");
+                var wordDiv = document.createElement("div");
+                wordDiv.textContent = newWord;
+                document.body.appendChild(wordDiv);
+            }
 
-            const daysInWeek = 7;
-            const daysInMonth = 30;
+            function useColor() {
+                var red = document.getElementById("red").value;
+                var green = document.getElementById("green").value;
+                var blue = document.getElementById("blue").value;
 
-            var totalFine = 0;
+                if (red < 0 || green < 0 || blue < 0 || red > 255 || green > 255 || blue > 255) {
+                    document.getElementById("red") = ""
+                    document.getElementById("green") = ""
+                    document.getElementById("blue") = ""
+                    alert("arasworia");
+                    return;
+                }
 
-            if (days < daysInWeek) {
-                totalFine = days * daysFine;
-            } else if (days > daysInWeek && days < daysInMonth) {
-                totalFine = parseInt(days / daysInWeek) * weeksFine + (days % daysInWeek) * daysFine;
+
+                var original = document.getElementById("example");
+                var reversed = document.getElementById("modified");
+
+
+                original.style.backgroundColor = `rgb( ${red}, ${green} , ${blue})`
+                original.style.width = "50px"
+                original.style.height = "50px"
+                original.style.border = "1px solid purple"
+
+                reversed.style.width = "50px"
+                reversed.style.height = "50px"
+                reversed.style.border = "1px solid purple"
+
+                var rred = 255 - red;
+                var rgreen = 255 - green;
+                var rblue = 255 - blue;
+                reversed.style.backgroundColor = `rgb(${rred}, ${rgreen} , ${rblue})`
+
+            }
+
+            function sortWord() {
+                var word = "pneumonoultramicroscopicsilicovolcanoconiosis";
+                var wordArray = word.split("").sort();
+                console.log(wordArray.join(""))
+            }
+            sortWord()
+
+            function drinkAllowed() {
+                var age = 17;
+
+                if (age >= 18) {
+                    console.log("drink allowed")
+                }
+                else {
+                    console.log("drink not allowed")
+                }
+            }
+            drinkAllowed();
+        }
+
+        function leapYear() {
+
+            var year = document.getElementById("leapyear").value;
+            var result = document.createElement("div");
+            var final = document.getElementById("result");
+
+            if (year % 4 === 0) {
+                result.innerHTML = "Leap"
             } else {
-                var daysMonths = days % daysInMonth;
-                var monthsCount = parseInt(days / daysInMonth);
-                var weeksCount = parseInt(daysMonths / daysInWeek);
-                var leftDays = daysMonths % daysInWeek;
-
-                totalFine = monthsCount * monthFine + weeksCount * weeksFine + leftDays * daysFine;
-
+                result.innerHTML = "Not Leap"
             }
 
-            var answer = document.createElement("div");
-            answer.textContent = totalFine + " ლარი";
-            document.body.appendChild(answer);
+            final.appendChild(result);
         }
 
+        function carNeeded() {
+            var people = 11;
+            var result = Math.ceil(people / 5)
 
-        function newWord() {
-            var myWord = document.getElementById("word").value;
-            var wordArray = myWord.split("");
-            wordArray.shift();
-            var newWord = wordArray.join("");
-            var wordDiv = document.createElement("div");
-            wordDiv.textContent = newWord;
-            document.body.appendChild(wordDiv);
+        }
+        carNeeded();
+
+
+        function boxVolume() {
+            var width = 5;
+            var height = 2;
+            var length = 1;
+            var moculoba = width * height * length;
         }
 
-        function useColor() {
-            var red = document.getElementById("red").value;
-            var green = document.getElementById("green").value;
-            var blue = document.getElementById("blue").value;
+        function repDigit() {
+            var dig = 112;
+            var digArray = dig.toString().split("");
+            var maxcount = digArray.length;
+            var status;
+            // for (var i = 0; i < maxcount; i++) {
+            //     for (var j = i + 1; j < maxcount; j++) {
+            //         if (digArray[i] !== digArray[j]) {
+            //             status = false;
+            //         }else{
+            //             status = true
+            //         }
 
-            if( red < 0 || green < 0 || blue < 0 || red > 255 || green > 255 || blue > 255 ){
-                document.getElementById("red") = ""
-                document.getElementById("green") = ""
-                document.getElementById("blue") = ""
-                alert("arasworia");
-                return;
+            //         if(status === false){
+            //             break;
+            //         }
+
+            //     }
+            // }
+
+            for (var i = 0; i < maxcount; i++) {
+                if (digArray[0] === digArray[i]) {
+                    return true;
+                } else {
+                    return false;
+                }
+
+                if (status === false) {
+                    break;
+                }
             }
+
+            console.log(status)
+        }
+
+        repDigit()
+
+
+        function sale() {
+            var price = 1500;
+            var percente = 49;
+            var sales = price - price * percente / 100;
+            console.log(sales.toFixed(2))
+        }
+        sale();
+
+        function meansum(){
+            var num = 666;
+            var numArray = num.toString().split("");
+            var count = 0;
+            var sum = 0;
+            var arrayLength = numArray.length;
+
+            // for(var i = 0 ; i< arrayLength; i++){
+            //     sum = sum +  Number(numArray[i]);
+            //     count++;
+            // }
+            do{
+                sum += num % 10;
+                count++;
+                num= Math.floor(num / 10)
+            }while(num > 0);
             
 
-            var original = document.getElementById("example");
-            var reversed = document.getElementById("modified");
-
-
-            original.style.backgroundColor = `rgb( ${red}, ${green} , ${blue})`
-            original.style.width = "50px"
-            original.style.height = "50px"
-            original.style.border = "1px solid purple"
-
-            reversed.style.width = "50px"
-            reversed.style.height = "50px"
-            reversed.style.border = "1px solid purple"
-
-            var rred = 255 - red;
-            var rgreen = 255 - green;
-            var rblue = 255 - blue;
-            reversed.style.backgroundColor = `rgb(${rred}, ${rgreen} , ${rblue})`
-
+            console.log((sum/count))
         }
+        meansum();
+
+
+
+
+        /*
+        პალინდრომი -> rogor, madam, 1234321
+        მასივში -> .reverse() -> .join("") -> შედარება საწყისი საბოლოოს
+        */
     </script>
+
+
+
 
 
 </body>
