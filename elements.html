@@ -68,9 +68,25 @@
         */
 
 
-
-        
-
+        var text = "1 1 2011";
+        console.log(text)
+        var mass = text.split(" ");
+        console.log(mass)
+        var sum1 = mass[0] * mass[1]
+        console.log(sum1)
+        var sum2 = mass[2].split("");
+        console.log(sum2)
+        var sum1mass = sum1.toString().split("");
+        console.log(sum1mass)
+        var sum1length = sum1mass.length;
+        console.log(sum1length)
+        if(sum1length === 1){
+            if(sum1 == sum2[3]){
+                console.log(true) 
+            }else{
+                console.log(false)
+            }
+        }
     </script>
 </body>
 
