@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+        @theme {
+          --color-mine: #112358;
+        }
+      </style>
+
+</head>
+
+<body class="color-mine">
+
+    <div>
+        <div class="text-center font-bold text-4xl">Properties For Rent</div>
+
+        <div class="text-center">
+            <button class="text-white py-3 px-10 bg-black w-fit rounded-xl mt-5 text-[20px]">view more</button>
+        </div>
+
+        <div class="w-[366px] h-[380px] bg-black bg-[url(image1.jpeg)] bg-cover bg-center rounded-lg relative"
+            id="slide">
+            <div class="w-[90%] h-20 bg-white absolute bottom-2 left-1/2 translate-x-[-50%]"></div>
+        </div>
+
+
+
+    </div>
+
+
+    <script>
+        const slider = document.querySelector("#slide");
+
+        /*5 2 2011 dd mm yyyy*/
+        /*var a = split(" ") -> a = [5,2,2011] */
+        //sum1  = a[0] * a[1] 5*2 = 10
+        //arr2 = a[2].split("") 2011 -> split("") -> [2,0,1,1]
+        //countsum = sum1.split("").length [1,0] -> 2
+        /*
+        if(countsum === 1){
+            if(sum1 === arr2[3]){
+            return true;
+            }else{
+                return false;
+            }
+        }else if(countsum === 2){
+            var comb = arr2[2].toString() + arr[3].toString(); "1" + "1" + "11"
+            if(comb === sum1){
+            return true;
+            }else{
+                return false;
+            }
+        }else{
+             var comb = arr2[1].toString() + arr2[2].toString() + arr[3].toString(); "1" + "1" + "11"
+            if(comb === sum1){
+            return true;
+            }else{
+                return false;
+            }
+        }   
+
+        */
+
+
+
+        
+
+    </script>
+</body>
+
+</html>

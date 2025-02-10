@@ -218,7 +218,7 @@
         }
         sale();
 
-        function meansum(){
+        function meansum() {
             var num = 666;
             var numArray = num.toString().split("");
             var count = 0;
@@ -229,23 +229,54 @@
             //     sum = sum +  Number(numArray[i]);
             //     count++;
             // }
-            do{
+            do {
                 sum += num % 10;
                 count++;
-                num= Math.floor(num / 10)
-            }while(num > 0);
-            
+                num = Math.floor(num / 10)
+            } while (num > 0);
 
-            console.log((sum/count))
+
+            console.log((sum / count))
         }
         meansum();
 
 
+        function palindrom() {
+            var a = "anrog";
+
+            var aMas = a.split("");
+            var aMasRev = aMas.reverse();
+            var b = aMasRev.join("");
+
+            if (a === b) {
+                console.log("palindrom")
+            } else {
+                console.log("no palindrom")
+            }
+
+        }
+        palindrom()
+
+        function achilles() {
+            var km = 1000;
+
+            for (var i = 0; i < 20; i++) {
+                km = km / 2
+            }
+
+            console.log(km.toFixed(5))
+
+        }
+        achilles()
+
+        codefile.io/f/F871TvcyjX
 
 
         /*
+
         პალინდრომი -> rogor, madam, 1234321
         მასივში -> .reverse() -> .join("") -> შედარება საწყისი საბოლოოს
+
         */
     </script>
 
