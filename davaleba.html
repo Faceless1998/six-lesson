@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: black;">
+
+    <input type="text" id="year">
+
+    <button onclick="year()">OK</button>
+
+    <div id="res"></div>
+    <script>
+        function year() {
+            var text = document.getElementById("year").value;
+            var newArray = text.trim().split(" ");
+            var newArrL = newArray.length;
+            if (newArrL != 3) {
+                document.getElementById("res").innerHTML = "Idioti xar da "
+            } else {
+
+                var sum = Number(newArray[0]) * Number(newArray[1]);
+                var lastSplit = newArray[2].split("");
+
+                var sumSplit = sum.toString().split("").length;
+                var compare = 0;
+
+                for (var i = 4 - sumSplit; i < 4; i++) {
+                    compare = compare + lastSplit[i]
+                }
+
+                document.getElementById("res").innerHTML = (compare == sum)
+            }
+        }
+
+        /*
+        https://edabit.com/challenge/n7qZMpuLsAMGBGNLA
+        */
+    </script>
+</body>
+
+</html>
