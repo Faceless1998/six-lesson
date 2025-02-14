@@ -7,283 +7,97 @@
     <title>Document</title>
 </head>
 
-<body>
-
-    <input type="text" id="days" required>
-    <button onclick="result()">OK</button>
-
-    <br><br><br><br>
-
-    <input type="text" id="word">
-    <button onclick="newWord()">OK</button>
-    <br><br><br><br>
-
-    <input type="text" id="red">
-    <input type="text" id="green">
-    <input type="text" id="blue">
-    <br>
-    <button onclick="useColor()">OK</button>
-
-    <div id="example">
-
-    </div>
-
-    <div id="modified">
-    </div>
-
-
-    <input type="text" id="leapyear">
-    <button onclick="leapYear()">OK</button>
-
-    <div id="result"></div>
-
+<body style="background-color: black; color: white;">
 
 
     <script>
-        {
-            function result() {
-
-                var days = document.getElementById("days").value;
-
-                if (days == "") {
-                    alert("Input Value");
-                    return;
-                }
-
-                const daysFine = 20;
-                const weeksFine = 50;
-                const monthFine = 200;
-
-                const daysInWeek = 7;
-                const daysInMonth = 30;
-
-                var totalFine = 0;
-
-                if (days < daysInWeek) {
-                    totalFine = days * daysFine;
-                } else if (days > daysInWeek && days < daysInMonth) {
-                    totalFine = parseInt(days / daysInWeek) * weeksFine + (days % daysInWeek) * daysFine;
-                } else {
-                    var daysMonths = days % daysInMonth;
-                    var monthsCount = parseInt(days / daysInMonth);
-                    var weeksCount = parseInt(daysMonths / daysInWeek);
-                    var leftDays = daysMonths % daysInWeek;
-
-                    totalFine = monthsCount * monthFine + weeksCount * weeksFine + leftDays * daysFine;
-
-                }
-
-                var answer = document.createElement("div");
-                answer.textContent = totalFine + " ლარი";
-                document.body.appendChild(answer);
-            }
-
-            function newWord() {
-                var myWord = document.getElementById("word").value;
-                var wordArray = myWord.split("");
-                wordArray.shift();
-                var newWord = wordArray.join("");
-                var wordDiv = document.createElement("div");
-                wordDiv.textContent = newWord;
-                document.body.appendChild(wordDiv);
-            }
-
-            function useColor() {
-                var red = document.getElementById("red").value;
-                var green = document.getElementById("green").value;
-                var blue = document.getElementById("blue").value;
-
-                if (red < 0 || green < 0 || blue < 0 || red > 255 || green > 255 || blue > 255) {
-                    document.getElementById("red") = ""
-                    document.getElementById("green") = ""
-                    document.getElementById("blue") = ""
-                    alert("arasworia");
-                    return;
-                }
-
-
-                var original = document.getElementById("example");
-                var reversed = document.getElementById("modified");
-
-
-                original.style.backgroundColor = `rgb( ${red}, ${green} , ${blue})`
-                original.style.width = "50px"
-                original.style.height = "50px"
-                original.style.border = "1px solid purple"
-
-                reversed.style.width = "50px"
-                reversed.style.height = "50px"
-                reversed.style.border = "1px solid purple"
-
-                var rred = 255 - red;
-                var rgreen = 255 - green;
-                var rblue = 255 - blue;
-                reversed.style.backgroundColor = `rgb(${rred}, ${rgreen} , ${rblue})`
-
-            }
-
-            function sortWord() {
-                var word = "pneumonoultramicroscopicsilicovolcanoconiosis";
-                var wordArray = word.split("").sort();
-                console.log(wordArray.join(""))
-            }
-            sortWord()
-
-            function drinkAllowed() {
-                var age = 17;
-
-                if (age >= 18) {
-                    console.log("drink allowed")
-                }
-                else {
-                    console.log("drink not allowed")
-                }
-            }
-            drinkAllowed();
+        /*
+        მეთოდები
+            fetch
+            axios მეთოდი
+            if ოპერატორი
+            ტერნერის ოპერატორი
+            ლოგიკური ოპერატორი
+            switch ოპერატორი
+            for of ოპერატორი
+            for in ოპერატორი
+            for ოპერატორი
+            forEach
+            Map
+        
+        var pass = document.getElementById("myid")
+        var array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        var lenght = array.length;
+        var lastIndex = array[lenght - 1];
+        pass.innerHTML += "For ციკლი -> "
+        for (var i = 0; i < lenght; i++) {
+            pass.innerHTML += array[i] + " "
         }
-
-        function leapYear() {
-
-            var year = document.getElementById("leapyear").value;
-            var result = document.createElement("div");
-            var final = document.getElementById("result");
-
-            if (year % 4 === 0) {
-                result.innerHTML = "Leap"
-            } else {
-                result.innerHTML = "Not Leap"
-            }
-
-            final.appendChild(result);
+        pass.innerHTML += "<br>For...in ციკლი -> "
+        for (var i in array) {
+            pass.innerHTML += array[i] + " "
         }
-
-        function carNeeded() {
-            var people = 11;
-            var result = Math.ceil(people / 5)
-
+        pass.innerHTML += "<br>For...Of ციკლი -> "
+        for (var i of array) {
+            pass.innerHTML += i + " "
         }
-        carNeeded();
+        pass.innerHTML += "<br>forEach ციკლი -> "
+        array.forEach((i, index) => {
+            pass.innerHTML += i + " -> " + index + " "
+        })
+        pass.innerHTML += "<br>Map ციკლი -> "
+        array.map((i, index) => {
+            pass.innerHTML += i + " -> " + index + " "
+        })*/
+
+        // function vowelsCount() {
+        //     var text = "This Is sparta"
+        //     var textArr = text.split("");
+        //     var count = 0;
+        //     var letters = ["a", "i", "o", "u", "e"]
+        //     textArr.map((element) => {
+        //         for( var i of letters){
+        //             if( element === i || element === i.toLocaleUpperCase()){
+        //                 count++;
+        //             }
+        //         }
+        //     })
 
 
-        function boxVolume() {
-            var width = 5;
-            var height = 2;
-            var length = 1;
-            var moculoba = width * height * length;
-        }
+        //     console.log(count)
+        // }
+        // vowelsCount();
 
-        function repDigit() {
-            var dig = 112;
-            var digArray = dig.toString().split("");
-            var maxcount = digArray.length;
-            var status;
-            // for (var i = 0; i < maxcount; i++) {
-            //     for (var j = i + 1; j < maxcount; j++) {
-            //         if (digArray[i] !== digArray[j]) {
-            //             status = false;
-            //         }else{
-            //             status = true
-            //         }
-
-            //         if(status === false){
-            //             break;
-            //         }
-
-            //     }
-            // }
-
-            for (var i = 0; i < maxcount; i++) {
-                if (digArray[0] === digArray[i]) {
-                    return true;
-                } else {
-                    return false;
-                }
-
-                if (status === false) {
-                    break;
-                }
-            }
-
-            console.log(status)
-        }
-
-        repDigit()
-
-
-        function sale() {
-            var price = 1500;
-            var percente = 49;
-            var sales = price - price * percente / 100;
-            console.log(sales.toFixed(2))
-        }
-        sale();
-
-        function meansum() {
-            var num = 666;
-            var numArray = num.toString().split("");
+        function vowelsCount() {
+            var text = "This Is sparta"
+            // Ths s sprt
+            var textArr = text.split("");
             var count = 0;
-            var sum = 0;
-            var arrayLength = numArray.length;
+            var letters = ["a", "i", "o", "u", "e"]
+            textArr.map((element, index) => {
+                for (var i of letters) {
+                    if (element === i || element === i.toLocaleUpperCase()) {
+                        textArr[index] = ""
+                    }
+                }
+            })
 
-            // for(var i = 0 ; i< arrayLength; i++){
-            //     sum = sum +  Number(numArray[i]);
-            //     count++;
-            // }
-            do {
-                sum += num % 10;
-                count++;
-                num = Math.floor(num / 10)
-            } while (num > 0);
-
-
-            console.log((sum / count))
+            var final = textArr.join("")
+            console.log(final)
         }
-        meansum();
-
-
-        function palindrom() {
-            var a = "anrog";
-
-            var aMas = a.split("");
-            var aMasRev = aMas.reverse();
-            var b = aMasRev.join("");
-
-            if (a === b) {
-                console.log("palindrom")
-            } else {
-                console.log("no palindrom")
-            }
-
-        }
-        palindrom()
-
-        function achilles() {
-            var km = 1000;
-
-            for (var i = 0; i < 20; i++) {
-                km = km / 2
-            }
-
-            console.log(km.toFixed(5))
-
-        }
-        achilles()
-
-        codefile.io/f/F871TvcyjX
+        vowelsCount();
 
 
         /*
-
-        პალინდრომი -> rogor, madam, 1234321
-        მასივში -> .reverse() -> .join("") -> შედარება საწყისი საბოლოოს
-
-        */
+            მოცემულია მასივი რიცხვების
+            არეული თანმიმდევრობით
+            იპოვე უდიდესი და უმცირესი ელემენტი ამ მასივის
+            ----------------------------------------------
+            პროდუქტის ფასები მოცემულია, იპოვეთ პროდუქტი რომელიც იქნება მე-9, მე-4, მე-7;
+            ----------------------------------------------
+            https://edabit.com/challenge/RftQjZs3srJnRBEH8
+        */ 
     </script>
-
-
-
-
-
 </body>
 
 </html>
