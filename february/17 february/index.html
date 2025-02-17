@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: black; color: white;">
+
+
+    <script>
+        /*
+        მეთოდები
+            fetch
+            axios მეთოდი
+            if ოპერატორი
+            ტერნერის ოპერატორი
+            ლოგიკური ოპერატორი
+            switch ოპერატორი
+            for of ოპერატორი
+            for in ოპერატორი
+            for ოპერატორი
+            forEach
+            Map
+        
+        var pass = document.getElementById("myid")
+        var array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        var lenght = array.length;
+        var lastIndex = array[lenght - 1];
+        pass.innerHTML += "For ციკლი -> "
+        for (var i = 0; i < lenght; i++) {
+            pass.innerHTML += array[i] + " "
+        }
+        pass.innerHTML += "<br>For...in ციკლი -> "
+        for (var i in array) {
+            pass.innerHTML += array[i] + " "
+        }
+        pass.innerHTML += "<br>For...Of ციკლი -> "
+        for (var i of array) {
+            pass.innerHTML += i + " "
+        }
+        pass.innerHTML += "<br>forEach ციკლი -> "
+        array.forEach((i, index) => {
+            pass.innerHTML += i + " -> " + index + " "
+        })
+        pass.innerHTML += "<br>Map ციკლი -> "
+        array.map((i, index) => {
+            pass.innerHTML += i + " -> " + index + " "
+        })*/
+
+        // function vowelsCount() {
+        //     var text = "This Is sparta"
+        //     var textArr = text.split("");
+        //     var count = 0;
+        //     var letters = ["a", "i", "o", "u", "e"]
+        //     textArr.map((element) => {
+        //         for( var i of letters){
+        //             if( element === i || element === i.toLocaleUpperCase()){
+        //                 count++;
+        //             }
+        //         }
+        //     })
+
+
+        //     console.log(count)
+        // }
+        // vowelsCount();
+
+        function vowelsCount() {
+            var text = "This Is sparta"
+            // Ths s sprt
+            var textArr = text.split("");
+            var count = 0;
+            var letters = ["a", "i", "o", "u", "e"]
+            textArr.map((element, index) => {
+                for (var i of letters) {
+                    if (element === i || element === i.toLocaleUpperCase()) {
+                        textArr[index] = ""
+                    }
+                }
+            })
+
+            var final = textArr.join("")
+            console.log(final)
+        }
+
+        function masnum() {
+            var a = [10, 20, 30, 40, 50]
+            var pas = "";
+            var pasuxi = a.sort()
+            var max = pasuxi[pasuxi.length - 1]
+            var min = pasuxi[0]
+            return max + " " + min;
+        }
+
+        function prodPrice() {
+            var prod = [12, 34, 2134, 312, 125, 3, 5, 2414, 232, 145, 3, 46, 132]
+            var pasuxi = prod.map((num, index) => {
+                if (index == 9 || index == 4 || index == 7) {
+                    console.log(num)
+                }
+            })
+            return pasuxi;
+        }
+
+
+        function ternery() {
+            var a = 5;
+
+            var pasuxi = a > 5 ? "a > 5ზე" : (a < 5 ? "a < 5ზე" : "a == 5ის");
+            console.log(pasuxi)
+
+            // if (a > 5) {
+            //     console.log("a > 5ზე")
+            // } else if (a < 5) {
+            //     console.log("a < 5ზე")
+            // } else {
+            //     console.log("a == 5ის")
+            // }
+
+        }
+        ternery()
+
+        function ragaca() {
+            var text = "Maximus Decimus Meridius";
+            var array = text.split("");
+            array.map((texter, index) => {
+                if (texter == "a" || texter == "b" || texter == "c") {
+                    array[index] = ""
+                }
+
+                // (texter == "a" || texter == "b" || texter == "c") ? array[index] = "" : ""
+            })
+            return array.join("")
+        }
+        console.log(ragaca())
+        /*
+            https://edabit.com/challenge/48EJWLhF224na8po3
+        */
+
+        // var newe = ["grand grand", "grand", "", "Me!", "", "grand", "grand grand"]
+        // Math.abs();
+
+    </script>
+</body>
+
+</html>

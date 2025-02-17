@@ -1,103 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
-<body style="background-color: black; color: white;">
-
-
-    <script>
-        /*
-        მეთოდები
-            fetch
-            axios მეთოდი
-            if ოპერატორი
-            ტერნერის ოპერატორი
-            ლოგიკური ოპერატორი
-            switch ოპერატორი
-            for of ოპერატორი
-            for in ოპერატორი
-            for ოპერატორი
-            forEach
-            Map
-        
-        var pass = document.getElementById("myid")
-        var array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-        var lenght = array.length;
-        var lastIndex = array[lenght - 1];
-        pass.innerHTML += "For ციკლი -> "
-        for (var i = 0; i < lenght; i++) {
-            pass.innerHTML += array[i] + " "
-        }
-        pass.innerHTML += "<br>For...in ციკლი -> "
-        for (var i in array) {
-            pass.innerHTML += array[i] + " "
-        }
-        pass.innerHTML += "<br>For...Of ციკლი -> "
-        for (var i of array) {
-            pass.innerHTML += i + " "
-        }
-        pass.innerHTML += "<br>forEach ციკლი -> "
-        array.forEach((i, index) => {
-            pass.innerHTML += i + " -> " + index + " "
-        })
-        pass.innerHTML += "<br>Map ციკლი -> "
-        array.map((i, index) => {
-            pass.innerHTML += i + " -> " + index + " "
-        })*/
-
-        // function vowelsCount() {
-        //     var text = "This Is sparta"
-        //     var textArr = text.split("");
-        //     var count = 0;
-        //     var letters = ["a", "i", "o", "u", "e"]
-        //     textArr.map((element) => {
-        //         for( var i of letters){
-        //             if( element === i || element === i.toLocaleUpperCase()){
-        //                 count++;
-        //             }
-        //         }
-        //     })
-
-
-        //     console.log(count)
-        // }
-        // vowelsCount();
-
-        function vowelsCount() {
-            var text = "This Is sparta"
-            // Ths s sprt
-            var textArr = text.split("");
-            var count = 0;
-            var letters = ["a", "i", "o", "u", "e"]
-            textArr.map((element, index) => {
-                for (var i of letters) {
-                    if (element === i || element === i.toLocaleUpperCase()) {
-                        textArr[index] = ""
-                    }
-                }
-            })
-
-            var final = textArr.join("")
-            console.log(final)
-        }
-        vowelsCount();
-
-
-        /*
-            მოცემულია მასივი რიცხვების
-            არეული თანმიმდევრობით
-            იპოვე უდიდესი და უმცირესი ელემენტი ამ მასივის
-            ----------------------------------------------
-            პროდუქტის ფასები მოცემულია, იპოვეთ პროდუქტი რომელიც იქნება მე-9, მე-4, მე-7;
-            ----------------------------------------------
-            https://edabit.com/challenge/RftQjZs3srJnRBEH8
-        */ 
-    </script>
+<body>
+    
 </body>
-
 </html>
