@@ -9,3 +9,13 @@ npx create-react-app (სახელი)
 npm start
 
 src -> ფაილები რომლებიც არ გჭირდებათ მოშალეთ, ხოლო index.jsში და App.jsში საჭირო ხაზები დატოვეთ მხოლოდ
+
+
+
+react router dom
+
+BrowserRouter as Router -> index.js
+Routes - App.js
+Route - App.js
+
+Link 
