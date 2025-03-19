@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 // state - მდგომარეობას -  საიტის ზოგად მდგომარეობას (ცვლადთან მიმართებაში)
 import "./about.css"
+import Switcher from "./Switcher"
 
 //Hook
 
@@ -12,7 +13,11 @@ import "./about.css"
 
      return(
          <>
+         
              <div className="vashli" onClick={() => {setIsTrue(!isTrue) }}   ></div>
+
+
+             <Switcher />
          </>
      )
  }
