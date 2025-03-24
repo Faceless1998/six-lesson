@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./layout.css"
-
+import { ThemeProvider } from "../theme/ThemeProvider";
+import ThemeToggleButton from "../theme/ThemeToggleButton";
 const Layout = () => {
     return(
         <>
@@ -21,9 +22,15 @@ const Layout = () => {
                 <div className="nav-item">
                     <Link to="/sign-in" className="nav-link"> Sign in </Link>
                 </div>
+                
                 <div className="nav-item">
-                    <button>🌕</button>
+
+                    <ThemeProvider>
+                        <ThemeToggleButton />
+                    </ThemeProvider>
+
                 </div>
+                
 
             </div>  
         </>
