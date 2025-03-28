@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./post.css"
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -59,33 +60,69 @@ function App() {
     }
   };
 
+  const handleImageChanger = (e) => {
+    const file = e.target.files[0];
+    if(file){
+      const reader = new FileReader();
+      reader.onloadend = () =>{
+        setImage(reader.result);
+      }
+      reader.readAsDataURL(file);
+    }
+
+  }
+
+  const handleNewImageChanger = (e) => {
+    const file = e.target.files[0];
+    if(file){
+      const reader = new FileReader();
+      reader.onloadend = () =>{
+        setEditImage(reader.result);
+      }
+      reader.readAsDataURL(file);
+    }
+
+  }
+
   return (
     <>
-      <form onSubmit={handleCreatePost}>
-        <input
-          type="text"
-          placeholder="type..."
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <textarea
-          placeholder="description"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-        ></textarea>
-        <input type="file" />
+      <div className="container">
+        <h1 className="main-heading">My Blog</h1>
 
-        <input type="submit" value="submit" />
-      </form>
+          {/* Creating Post Form */}
+          <div className="form-section">
+            <h1>Create New Post</h1>
 
-      <div>
-        {posts.map((post) => (
-          <>
-            <div key={post.id}> {post.title} </div>
-            <div> {post.content} </div>
-            <div>{post.id}</div>
-          </>
-        ))}
+            <form className="form">
+
+                <input
+                  type="text"
+                  placeholder="Title"
+                  className="input-field"
+                  value={title}
+                  onChange={ (e) => setTitle(e.target.value) }
+                />
+
+                <textarea
+                placeholder="Content"
+                className="input-field"
+                value={content}
+                onChange={ (e) => setContent(e.target.value) }
+                />
+
+                <input
+                  type="file"
+                  className="input-field"
+                  onChange={handleImageChanger}
+                />
+
+                { image && <img src={image} alt="Preview" className="image-preview"/> }
+
+
+                <button className="submit-btn" type="submit">Create</button>
+            </form>
+          </div>
+
       </div>
     </>
   );
