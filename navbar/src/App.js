@@ -93,7 +93,7 @@ function App() {
           <div className="form-section">
             <h1>Create New Post</h1>
 
-            <form className="form">
+            <form className="form" onSubmit={handleCreatePost}>
 
                 <input
                   type="text"
@@ -123,6 +123,39 @@ function App() {
             </form>
           </div>
 
+
+        {/* Blog Post List */}
+
+        <div className="post-list">
+          <h2>Blog Posts</h2>
+
+          {
+
+            posts.length === 0 
+            ?
+            ( <>
+              <p className="no-post-message">No Posts Available.</p>
+            </> )
+            :
+            ( <>
+              {
+                posts.map( (post) => (
+                  <>
+                    <div key={post.id} className="post-item">
+
+                      <h3>{post.title}</h3>
+
+                      <p>{post.content}</p>
+
+                      { post.image && ( <img src={post.image} alt={post.title} /> ) }
+
+                    </div>
+                  </>
+                ))
+              }
+            </> )
+          }
+        </div>
       </div>
     </>
   );
