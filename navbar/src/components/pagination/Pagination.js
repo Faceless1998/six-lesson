@@ -1,23 +1,16 @@
 import React, { useState } from "react";
-import "./pagination.css";
-const ProductsData = [
-  { id: 1, name: "product 1", price: "$10" },
-  { id: 2, name: "product 2", price: "$20" },
-  { id: 3, name: "product 3", price: "$30" },
-  { id: 4, name: "product 4", price: "$40" },
-  { id: 5, name: "product 5", price: "$50" },
-  { id: 6, name: "product 6", price: "$60" },
-  { id: 7, name: "product 7", price: "$70" },
-  { id: 8, name: "product 8", price: "$80" },
-  { id: 9, name: "product 9", price: "$90" },
-  { id: 10, name: "product 10", price: "$100" },
-  { id: 11, name: "product 11", price: "$110" },
-  { id: 12, name: "product 12", price: "$120" },
-];
+
+const ProductsData = Array.from( {length: 1}, (_, index) => (
+{
+  id: index + 1,
+  name: `Product ${index + 1}`,
+  price: `$ ${ (index + 1) * 10}`
+}
+))
 
 const Pagination = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage] = useState(5);
+  const [productsPerPage] = useState(10);
 
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
@@ -30,10 +23,36 @@ const Pagination = () => {
   const totalProducts = ProductsData.length;
   const totalPages = Math.ceil(totalProducts / productsPerPage);
 
-  const paginate = (pageNumber) => {
-    if (pageNumber > 0 && pageNumber <= totalPages) {
-      setCurrentPage(pageNumber);
-    }
+  const paginate = () => {
+
+      const pages = []
+      const maxVisiblePages = 3;
+
+      if(totalPages <=7){
+        return Array.from({length: totalPages}, (_, index) => index + 1 )
+      }
+
+      pages.push(1);
+
+      if(currentPage > maxVisiblePages){
+        pages.push("...")
+      }
+
+      const startPage = Math.max(2, currentPage-1);
+      const endPage = Math.min(currentPage+1, totalPages-1);
+
+      for(let i=startPage; i<=endPage;i++){
+        pages.push(i);
+      }
+
+      if(currentPage < totalPages - maxVisiblePages + 1){
+        pages.push("...");
+      }
+
+      pages.push(totalPages);
+
+      return pages;
+
   };
 
   return (
@@ -52,21 +71,15 @@ const Pagination = () => {
         </div>
 
         <div className="pagination">
-          <button onClick={() => paginate(1)}> &lt;&lt; </button>
+         {paginate().map( (pages, index)  => (
+            
+              pages === "..." ?
+              <span key={index}> {pages} </span> :
+              <button key={index} onClick={() => setCurrentPage(pages)}> {pages} </button>
+            
+          ))
+         }
 
-          <button onClick={() => paginate(currentPage - 1)}>&lt;</button>
-
-          {Array.from({ length: totalPages }, (_, index) => (
-            <button
-              onClick={() => paginate(index + 1)}
-              className={currentPage === index + 1 ? "active" : ""}
-            >
-              {index + 1}
-            </button>
-          ))}
-
-          <button onClick={() => paginate(currentPage + 1)}>&gt;</button>
-          <button onClick={() => paginate(totalPages)}> &gt;&gt; </button>
         </div>
       </div>
     </>
