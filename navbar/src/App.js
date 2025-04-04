@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import Pagination from "./components/pagination/Pagination";
-
+import Slider from "./components/slider/Slider";
 
 function App() {
   return (
     <>
-      <Pagination />
+    <Slider />
     </>
   );
 }

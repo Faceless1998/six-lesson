@@ -1,0 +1,49 @@
+.slider-container{
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+}
+
+.slider-title{
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.slider-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-wrapper button{
+    font-size: 18px;
+    padding: 12px 18px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: blueviolet;
+    cursor: pointer;
+}
+
+.slider-wrapper button:disabled{
+    cursor: not-allowed;
+    background-color: #ccc;
+}
+
+.slider-track{
+    display: flex;
+    width: 1100px;
+    padding: 12px;
+    overflow: hidden;
+}
+
+.product-card{
+    width: 160px;
+    margin: 0 10px;
+    height: 260px;
+}
+
+.slider-view{
+    display: flex;
+}
