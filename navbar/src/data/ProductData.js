@@ -1,5 +1,7 @@
+import IMG1 from "./../assets/"
+
 export const ProductData = [
-    {id:1, name:"Remote", price: 20},
+    {id:1, name:"Remote", price: 20, img: IMG1},
     {id:2, name:"Laptop", price: 200},
     {id:3, name:"switcher", price: 132},
     {id:4, name:"Smartwatch", price: 120},
