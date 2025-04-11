@@ -20,7 +20,7 @@ const Layout = () => {
                 </div>
 
                 <div className="nav-item">
-                    <Link to="/sign-in" className="nav-link"> Sign in </Link>
+                    <Link to="/regitration" className="nav-link"> Sign in </Link>
                 </div>
                 
                 <div className="nav-item">

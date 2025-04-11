@@ -1,7 +1,12 @@
 import React from 'react'
-
+import SearchFilter from '../../components/search/SearchFilter'
 export const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      
+    <SearchFilter />
+
+
+    </div>
   )
 }
