@@ -5,6 +5,10 @@ import {About} from "./pages/about/About.js"
 import {Contact} from "./pages/contact/Contact.js";
 import {Registration} from "./pages/registration/Registration.js"
 import Layout from "./layout/Layout.js";
+
+import ProductList from "./pages/products/ProductList.jsx"
+import ProductDetails from "./pages/products/ProductDetails.jsx"
+
 function App() {
   return (
     <>
@@ -14,6 +18,10 @@ function App() {
       <Route path="/about" element={ <About /> } />
       <Route path="/contact" element={ <Contact /> }/>
       <Route path="/registration" element={ <Registration /> }/>
+      <Route path="/product" element={ <ProductList /> } />
+      <Route path="/details" element={ <ProductDetails /> } />
+
+
     </Routes>
     </>
   );
