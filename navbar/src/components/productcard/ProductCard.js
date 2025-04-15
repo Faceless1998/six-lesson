@@ -7,7 +7,7 @@ function ProductCard({product}) {
                 <img src={product.image} alt={product.name}/>
                 <h3>{product.name}</h3>
                 <p>${product.price}</p>
-                <Link > See More </Link>
+                <Link to={ `/product/${product.id}` }> See More </Link>
             </div>
         </>
     )
