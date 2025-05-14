@@ -1,0 +1,22 @@
+const jwt = require("jsonwebtoken");
+
+const protect = (req, res, next) => {
+    const authHeader = req.headers.authorization;
+    if(!authHeader || !authHeader.startWith("Bearer ")){
+        return res.status(401).json({message: "Authorization required"});
+    }
+
+    const token = authHeader.split(" ")[1];
+    
+    try{
+        const decoded = jwt.verify(token, process.env.JWT);
+       //  process.env.JWT - .env ფაილიდან JWT ს გამოძახება 
+
+       req.user = decoded;
+       next();
+    }catch(err){
+        res.status(401).json({message: "Invalid Token"})
+    }
+}
+
+module.exports = protect;

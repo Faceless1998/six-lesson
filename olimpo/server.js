@@ -1,18 +1,25 @@
 const express = require('express');
+const mongoose = require("mongoose")
 const dotenv = require('dotenv');
-const connectDB = require('./config/db')
-const app = express();
 const movieRoutes = require("./routes/movieRoutes");
+const userRoutes = require("./routes/userRoutes");
+
+const app = express();
 
 dotenv.config()
 
-connectDB();
-app.use("/api/movies", movieRoutes);
-//localhost:5000/api/movies/
+app.use("/api/movies", movieRoutes)
+app.use("/api/users", userRoutes)
 
-
-const PORT = process.env.PORT || 5001
-
-app.listen(PORT, () => {
-    console.log("server is Connected to Port");
+mongoose.connect(process.env.MONGODB,{
+    useNewUrlParser:true,
+    useUnifiedTopology: true
+}).then(() => {
+    console.log("Connected MongoDB");
+    app.listen(process.env.PORT, () => {
+        console.log(`Backend start at localhost:${process.env.PORT}`)
+    })
+}
+).catch(err => {
+    console.log("Error connection Mongodb", err);
 })
