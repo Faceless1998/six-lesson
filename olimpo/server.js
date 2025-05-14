@@ -12,8 +12,8 @@ app.use("/api/movies", movieRoutes)
 app.use("/api/users", userRoutes)
 
 mongoose.connect(process.env.MONGODB,{
-    useNewUrlParser:true,
-    useUnifiedTopology: true
+    // useNewUrlParser:true,
+    // useUnifiedTopology: true
 }).then(() => {
     console.log("Connected MongoDB");
     app.listen(process.env.PORT, () => {
