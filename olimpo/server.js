@@ -3,11 +3,13 @@ const mongoose = require("mongoose")
 const dotenv = require('dotenv');
 const movieRoutes = require("./routes/movieRoutes");
 const userRoutes = require("./routes/userRoutes");
+const cors = require("cors");
 
 const app = express();
 
 dotenv.config()
 
+app.use(cors());
 app.use("/api/movies", movieRoutes)
 app.use("/api/users", userRoutes)
 
