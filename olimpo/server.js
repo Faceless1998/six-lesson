@@ -9,6 +9,7 @@ const app = express();
 
 dotenv.config()
 
+app.use(express.json())
 app.use(cors());
 app.use("/api/movies", movieRoutes)
 app.use("/api/users", userRoutes)
