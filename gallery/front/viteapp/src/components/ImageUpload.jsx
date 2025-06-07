@@ -23,12 +23,12 @@ const ImageUpload = () => {
     formData.append("title", title);
     formData.append("image", image);
 
-    try {
-              console.log("res")
+      try {
+                console.log("res")
 
-      const res = await axios.post(
-        "http://localhost:5000/api/images",
-        formData
+        const res = await axios.post(
+          "http://localhost:5000/api/images",
+          formData
       );
       setResponse(res.data);
     } catch (err) {

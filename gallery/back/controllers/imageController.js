@@ -26,6 +26,10 @@ exports.uploadImage = async (req, res) => {
     const savedImage = await image.save();
     res.status(201).json(savedImage);
   } catch (err) {
+    if(err.code === "LIMIT_FILE_SEZE"){
+      return res.status(400).json({message: "image size must be 25MB max"});
+    }
+
     res
       .status(500)
       .json({ message: "Failed to upload image", error: err.message });

@@ -15,6 +15,7 @@ mongoose.connect(process.env.MONGODB_URL, {
     useUnifiedTopology: true,
 }).then(() => console.log("MongoDB Connected"))
 .catch(err => console.error(err));
+app.use("/uploads", express.static("uploads"));
 
 app.use("/api/images", imageRoutes);
 
