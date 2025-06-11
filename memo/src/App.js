@@ -1,12 +1,11 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Together from "./Together";
-// import UseMemo from './UseMemo';
-// import UseCallbackExample from "./UseCallbackExample"
+import { Route, Routes } from "react-router-dom";
+import { Home } from "./pages/Home";
 function App() {
   return (
     <>
-      <Together />
+      <Routes>
+        <Route path="/" element={ <Home /> } />
+      </Routes>
     </>
   );
 }
