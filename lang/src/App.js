@@ -8,7 +8,7 @@ import { useState } from "react";
 function App() {
   const { t, i18n } = useTranslation();
 
-  const [flag, setFlag] = useState("");
+  const [flag, setFlag] = useState(i18n.language === "en" ? eng :  i18n.language === "ka" ? geo : frc);
 
   const siteLanguage = [
     {
@@ -30,6 +30,7 @@ function App() {
 
   const handleLanguageChange = (e) => {
     i18n.changeLanguage(e.target.value);
+    handleFlagChange()
   };
 
   const handleFlagChange = (e) => {
@@ -48,7 +49,7 @@ function App() {
 
       <div className="language-menu">
         <div className="select-wrapper" >
-          <div className="flag" style={{backgroundImage: `${flag}`}}></div>
+          <div className="flag" style={{backgroundImage: `url(${flag})`}}></div>
           <div className="select-arrow globe">
             <select
               className="select"
